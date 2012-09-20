@@ -1,0 +1,13 @@
+compress_assets: on
+gzip_assets: off
+
+javascripts:
+  flex:
+    - javascripts/polyfills.js
+    - javascripts/jquery.tooltip.js
+    - javascripts/jquery.bubble.js
+    - javascripts/jquery.message.js
+    - javascripts/jquery.tab.js
+    - javascripts/jquery.dropdown.js
+    - javascripts/jquery.modal.js
+    - javascripts/jquery.collapse.js

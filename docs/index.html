@@ -1,0 +1,2928 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="description" content="A responsive and modular front-end framework closely following the SMACSS naming conventions and concepts.">
+    <meta name="keywords" content="flex, html framework, css framework, responsive, smacss, front-end" />
+    <meta name="author" content="Vlad Suciu">
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- css -->
+    <link href="stylesheets/flex.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/prettify.css" type="text/css" rel="stylesheet" />
+
+    <style type="text/css">
+      pre.prettyprint {
+        padding: .78125% 1.5625%; 
+
+        border: 1px solid #dcdcdc;
+
+        background-color: #fafafa;
+      }
+    </style>
+
+    <title>Flex: A responsive and modular front-end framework</title>
+  </head>
+
+  <body onload="prettyPrint()">
+
+
+    <div class="l-container">
+
+      <div class="l-row">
+        <div class="dbr l-grid3">
+          <ul>
+            <li class="dbr-title"><h6>Flex</h6></li>
+            <li><a href="#flex">About</a></li>
+            <li><a href="#browser-support">Browser Support</a></li>
+            <li><a href="#how-to-use">How to use</a></li>
+          </ul>
+
+          <ul>
+            <li class="dbr-title"><h6>Components</h6></li>
+            <li><a href="#grid">Flexible Grid</a></li>
+            <li><a href="#block">Block Grid</a></li>
+            <li><a href="#type">Typography</a></li>
+            <li><a href="#form">Form</a></li>
+            <li><a href="#button">Button</a></li>
+            <li><a href="#toolbar">Toolbar</a></li>
+            <li><a href="#message">Message</a></li>
+            <li><a href="#label">Label</a></li>
+            <li><a href="#table">Table</a></li>
+            <li><a href="#subnav">Subnav</a></li>
+            <li><a href="#pagination">Pagination</a></li>
+            <li><a href="#tab">Tab</a></li>
+            <li><a href="#dropdown">Dropdown</a></li>
+            <li><a href="#tooltip">Tooltip</a></li>
+            <li><a href="#bubble">Bubble</a></li>
+            <li><a href="#modal">Modal</a></li>
+            <li><a href="#progress">Progress Bar</a></li>
+          </ul>
+        </div><!-- #sidebar -->
+
+        <div id="main" class="l-grid9">
+          <a name="flex"></a>
+          <div class="section">
+            <div class="hro">
+              <h1>Flex</h1>
+              <p>A responsive and modular front-end framework closely following the <a href="http://www.smacss.com/">SMACSS</a> naming conventions and concepts. </p>
+              <p>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+                <div class="fb-like" data-href="http://www.flex.fyvesmedia.com" data-send="false" data-width="450" data-show-faces="false"></div>
+              </p>
+              <a class="btn" href="https://github.com/suciuvlad/flex">Github Page</a>
+              <a class="btn btn-submit" href="http://flex.fyvesmedia.com/flex-0.1.0.zip">Download</a>
+            </div>
+
+            <div class="nav nav-fixed-top">
+              <div class="nav--container">
+                <a href="#" data-trigger="collapse" data-target=".nav--items" class="btn btn-navigationbar nav--toggler l-phone-visible">
+                  <span class="mre"></span>
+                  <span class="mre"></span>
+                  <span class="mre"></span>
+                </a>
+
+                <ul class="nav--items nav--items-collapse">
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 1</a></li>
+                  <li class="nav--divider"></li>
+                  <li><a href="#">Item 1</a></li>
+                  <li class="nav--divider"></li>
+                  <li>
+                    <div class="drd">
+                      <a class="drd--toggle" data-trigger="dropdown" href="#">Dropdown with links</a>
+                      <ul class="drd--menu">
+                        <li><a href="#">Menu Item 1</a></li>
+                        <li><a href="#">Menu Item 2</a></li>
+                        <li><a href="#">Menu Item 3</a></li>
+                        <li><a href="#">Menu Item 4</a></li>
+                        <li class="drd--menu--sep"></li>
+                        <li><a href="#">Menu Item 5</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav--divider"></li>
+                  <li><a href="#">Item 1</a></li>
+                </ul>
+              </div>
+            </div><!-- .nav -->
+            <a name="browser-support"></a>
+            <h3>Browser Support</h3>
+            <p>
+              <img src="images/browser_logos-32.png" alt="Google Chrome, Firefox, Opera, Safari, Internet Explorer" />
+            </p>
+            <p>Flex was designed to work with the most major browsers. If a module has issues in a specific browser it's mentioned in the Browser Support section of that specific module.</p>
+
+            <a name="how-to-use"></a>
+            <h3>How to use</h3>
+            <p>After you download and unzip Flex you will be left with 2 folders: </p>
+            <ol>
+              <li><strong>Docs: </strong> The documentation website.</li>
+              <li><strong>Src:</strong> Contains A basic <strong>HTML template</strong> to quickly get you started, images, <code>flex.min.css</code> and <code>flex.min.js</code></li>
+            </ol>
+
+            <p>If you would like a stripped down version of Flex - maybe with fewer modules - you can download the entire framework from github and compile it yourself. The following tools are needed: </p>
+            <ul class="ul-square">
+              <li><a href="http://sass-lang.com/">SASS <sup>1</sup></a> To compile the CSS Files</li>
+              <li><a href="https://github.com/documentcloud/jammit">Jammit</a> To compile the Javascript Files</li>
+            </ul>
+            <p><sup>1</sup> While compiling the css make sure the decimal precision is set a higher number than the default.</p>
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="grid"></a>
+            <h2>Flexible Grid</h2>
+            <p>The flexible grid is based on the concepts advocated by Ethan Marcotte in his book <a href="#">Responsive Webdesign</a>. The formula behind the grid math calculations is fairly simple: <code>target % context = result</code>.</p>
+            <p>Everything you need to do in order to use the grid is to wrap the columns in <code>.l-row</code> parent containers. Basically the rows keep the columns constrained at specific dimensions that change based on the user's screen size.</p>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-grid">Preview</a></li>
+                <li><a href="#markup-grid">Markup</a></li>
+              </ul>
+
+              <div id="preview-grid" class="tab--container">
+                <div class="l-row display">
+                  <div class="l-grid3">3</div>
+                  <div class="l-grid3">3</div>
+                  <div class="l-grid3">3</div>
+                  <div class="l-grid3">3</div>
+                </div>
+
+                <div class="l-row display">
+                  <div class="l-grid4">4</div>
+                  <div class="l-grid4">4</div>
+                  <div class="l-grid4">4</div>
+                </div>
+
+                <div class="l-row display">
+                  <div class="l-grid6">6</div>
+                  <div class="l-grid6">6</div>
+                </div>
+
+                <div class="l-row display">
+                  <div class="l-grid12">12</div>
+                </div>
+
+                <div class="l-row display">
+                  <div class="l-grid4">4</div>
+                  <div class="l-grid4 l-offset4">4</div>
+                </div>
+
+                <div class="l-row display">
+                  <div class="l-grid4 l-offset4">4</div>
+                </div>
+
+                <div class="l-row display">
+                  <div class="l-grid3">3</div>
+                  <div class="l-grid3 l-offset6">3</div>
+                </div>
+              </div><!-- #preview-grid -->
+
+              <div id="markup-grid" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="l-row"&gt;
+  &lt;div class="l-grid3"&gt;3&lt;/div&gt;
+  &lt;div class="l-grid3"&gt;3&lt;/div&gt;
+  &lt;div class="l-grid3"&gt;3&lt;/div&gt;
+  &lt;div class="l-grid3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-row"&gt;
+  &lt;div class="l-grid4"&gt;4&lt;/div&gt;
+  &lt;div class="l-grid4"&gt;4&lt;/div&gt;
+  &lt;div class="l-grid4"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-row"&gt;
+  &lt;div class="l-grid6"&gt;6&lt;/div&gt;
+  &lt;div class="l-grid6"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-row"&gt;
+  &lt;div class="l-grid12"&gt;12&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-row"&gt;
+  &lt;div class="l-grid4"&gt;4&lt;/div&gt;
+  &lt;div class="l-grid4 l-offset4"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-row"&gt;
+  &lt;div class="l-grid4 l-offset4"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-row"&gt;
+  &lt;div class="l-grid4 l-offset4"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-row"&gt;
+  &lt;div class="l-grid3"&gt;3&lt;/div&gt;
+  &lt;div class="l-grid3 l-offset6"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+              </div><!-- #markup-grid -->
+            </div><!-- .tab -->
+
+            <h4>Caveats</h4>
+            <p>The entire grid uses percentages to layout the structure. Following this convention during the development process is vital in order to preserve the integrity of the flexible grid. With that in mind here are a few tips:</p>
+            <ul class="ul-square">
+              <li>When calculating the <strong>margins</strong> the context is the width of the element's container.</li>
+              <li>When calculating the <strong>paddings</strong> the context is the width of the element itself.</li>
+            </ul>
+            <div class="msg msg-alert">
+              <h6>From pixels to percentages</h6>
+              <p>Let's say you have a <code>&lt;div class="contactBox"&gt;&lt;/div&gt;</code> somewhere on the page and it's values are currently expressed in pixels: </p>
+              <ul class="disc">
+                <li><code>width: 300px; padding: 30px; margin: 25px;</code></li>
+              </ul>
+              <p>Knowing that the parent's width is <code>780px</code> let's convert those pixel based values into percentages by making use of our formula.</p>
+              <ul class="ul-square">
+                <li><strong>Width</strong>: 300 / 780 = .384615385. Moving the decimal over two places we're left with <strong>38.4615385%</strong>.</li>
+                <li><strong>Padding</strong>: 30 / 300 = <strong>10%</strong>.</li>
+                <li><strong>Margin</strong>: 25 / 780 = <strong>3.205128205%</strong>.</li>
+              </ul>
+            </div>
+
+            <h4>Browser Support</h4>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>IE8</th>
+                  <th>IE9+</th>
+                  <th>Firebox</th>
+                  <th>Chrome</th>
+                  <th>Opera <sup>2</sup></th>
+                  <th>Safari</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Grid</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>Media Queries</td>
+                  <td>&times; <sup>1</sup></td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+              </tbody>
+            </table>
+
+            
+            <p><sup>1</sup> Internet Explorer 8 or older versions do not support CSS3 Media Queries but you can enable them by using a <a href="https://github.com/scottjehl/Respond">javascript pollyfill</a>.</p>
+            <p><sup>2</sup> Opera has some annoying bugs with percentage based values which can lead to some unexpected behavior.</p>
+            
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="block"></a>
+            <h2>
+              Block Grid
+            </h2>
+
+            <p>Used for displaying a horizontal list of items without needing extra mark-up like rows and columns. It basically behaves like <code>inline-block</code>.</p>
+
+            <p><span class="lbl lbl-notice">Note:</span> Be aware that while apparently it scales like the flexible grid system it <strong>does not</strong> convert itself to block-level styling at smaller view ports.</p>
+
+            <h3>Class</h3>
+            <ul class="ul-square">
+              <li><code>.l-blockX</code> whereas X represents the amount of items per row.</li>
+            </ul>
+
+            <h4>Usage</h4>
+            <p>Place the required class on a parent element and it's direct child elements will behave appropiately. Easy as that!</p>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-block">Preview</a></li>
+                <li><a href="#markup-block">Markup</a></li>
+              </ul>
+
+              <div id="preview-block" class="tab--container">
+                <ul class="l-block3">
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                  <li>3</li>
+                </ul>
+              </div><!-- #preview-block -->
+              <div id="markup-block" class="tab--container">
+<pre class="prettyprint">
+&lt;ul class="l-block3"&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+              </div><!-- #markup-block -->
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="type"></a>
+            <h2>Typography</h2>
+            <p>Most of the framework's values are expressed in relative terms hence I choosed <strong>ems</strong> over pixels for defining the basic typography rules.</p>
+
+            <h3>Headings</h3>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-type">Preview</a></li>
+                <li><a href="#markup-type">Markup</a></li>
+              </ul>
+
+              <div id="preview-type" class="tab--container">
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+                <h6>Heading 6</h6>
+              </div><!-- #preview-type -->
+
+              <div id="markup-type" class="tab--container">
+<pre class="prettyprint">
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+</pre>
+              </div><!-- #markup-type -->
+            </div><!-- .tab -->
+
+            <hr />
+
+            <h3>Paragraphs</h3>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-paragraphs">Preview</a></li>
+                <li><a href="#markup-paragraphs">Markup</a></li>
+              </ul>
+
+              <div id="preview-paragraphs" class="tab--container">
+                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
+                <p>Donec varius nulla pellentesque lorem hendrerit interdum porta lorem imperdiet. Nulla sit amet condimentum sapien. Vivamus tempus justo nec odio cursus euismod. In quam velit, sodales nec tincidunt quis, convallis in nisi. Nullam luctus est eget urna ultricies sed pretium sapien ultricies.</p>
+                <p>Sed placerat est sed felis elementum vestibulum. Ut lobortis laoreet iaculis.</p>
+              </div><!-- #preview-paragraphs -->
+
+              <div id="markup-paragraphs" class="tab--container">
+<pre class="prettyprint">
+&lt;p&gt;Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.&lt;/p&gt;
+&lt;p&gt;Donec varius nulla pellentesque lorem hendrerit interdum porta lorem imperdiet. Nulla sit amet condimentum sapien. Vivamus tempus justo nec odio cursus euismod. In quam velit, sodales nec tincidunt quis, convallis in nisi. Nullam luctus est eget urna ultricies sed pretium sapien ultricies.&lt;/p&gt;
+&lt;p&gt;Sed placerat est sed felis elementum vestibulum. Ut lobortis laoreet iaculis.&lt;/p&gt;
+</pre>
+              </div><!-- #markup-paragraphs -->
+            </div><!-- .tab -->
+
+            <hr />
+
+            <h3>Unordered List</h3>
+            <h4>Classes: </h4>
+            <ul class="ul-square">
+              <li><code>.ul-square</code></li>
+              <li><code>.ul-circle</code></li>
+              <li><code>.ul-disc</code></li>
+            </ul>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-ul">Preview</a></li>
+                <li><a href="#markup-ul">Markup</a></li>
+              </ul>
+
+              <div id="preview-ul" class="tab--container">
+                <ul>
+                  <li>Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.</li>
+                  <li>Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.</li>
+                  <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
+                </ul>
+
+                <ul class="ul-square">
+                  <li>Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.</li>
+                  <li>Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.</li>
+                  <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
+                </ul>
+
+                <ul class="ul-circle">
+                  <li>Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.</li>
+                  <li>Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.</li>
+                  <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
+                </ul>
+
+                <ul class="ul-disc">
+                  <li>Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.</li>
+                  <li>Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.</li>
+                  <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
+                </ul>
+              </div><!-- #preview-ul -->
+
+              <div id="markup-ul" class="tab--container">
+<pre class="prettyprint">
+&lt;ul&gt;
+  &lt;li&gt;Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.&lt;/li&gt;
+  &lt;li&gt;Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.&lt;/li&gt;
+  &lt;li&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="ul-square"&gt;
+  &lt;li&gt;Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.&lt;/li&gt;
+  &lt;li&gt;Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.&lt;/li&gt;
+  &lt;li&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="ul-circle"&gt;
+  &lt;li&gt;Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.&lt;/li&gt;
+  &lt;li&gt;Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.&lt;/li&gt;
+  &lt;li&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="ul-disc"&gt;
+  &lt;li&gt;Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.&lt;/li&gt;
+  &lt;li&gt;Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.&lt;/li&gt;
+  &lt;li&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+              </div><!-- #markup-ul -->
+            </div><!-- .tab -->
+
+            <hr />
+
+            <h3>Ordered List</h3>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-ol">Preview</a></li>
+                <li><a href="#markup-ol">Markup</a></li>
+              </ul>
+
+              <div id="preview-ol" class="tab--container">
+                <ol>
+                  <li>Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.</li>
+                  <li>Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.</li>
+                  <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
+                </ol>
+              </div><!-- #preview-ol -->
+
+              <div id="markup-ol" class="tab--container">
+<pre class="prettyprint">
+&lt;ol&gt;
+  &lt;li&gt;Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.&lt;/li&gt;
+  &lt;li&gt;Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.&lt;/li&gt;
+  &lt;li&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+              </div><!-- #markup-ol -->
+            </div><!-- .tab -->
+
+            <hr />
+
+            <h3>Definition List</h3>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-dl">Preview</a></li>
+                <li><a href="#markup-dl">Markup</a></li>
+              </ul>
+
+              <div id="preview-dl" class="tab--container">
+                <dl>
+                  <dt>Donec lorem turpis</dt>
+                  <dd>Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.</dd>
+
+                  <dt>Vestibulum enim est</dt>
+                  <dd>Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.</dd>
+
+                  <dt>Pellentesque habitant morbi</dt>
+                  <dd>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</dd>
+                </dl>
+              </div><!-- #preview-dl -->
+
+              <div id="markup-dl" class="tab--container">
+<pre class="prettyprint">
+&lt;dl&gt;
+  &lt;dt&gt;Donec lorem turpis&lt;/dt&gt;
+  &lt;dd&gt;Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.&lt;/dd&gt;
+
+  &lt;dt&gt;Vestibulum enim est&lt;/dt&gt;
+  &lt;dd&gt;Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.&lt;/dd&gt;
+
+  &lt;dt&gt;Pellentesque habitant morbi&lt;/dt&gt;
+  &lt;dd&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+              </div><!-- #markup-dl -->
+            </div><!-- .tab -->
+
+            <hr />
+
+            <h3>Blockquote</h3>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-blockquote">Preview</a></li>
+                <li><a href="#markup-blockquote">Markup</a></li>
+              </ul>
+
+              <div id="preview-blockquote" class="tab--container">
+                <blockquote>
+                  <p>Nunc id diam vitae nisl tempor tempus ac et orci. Nam sit amet porttitor purus. Praesent porttitor ultricies interdum. Proin sit amet dignissim dolor.</p>
+                  <small>Vlad Suciu</small>
+                </blockquote>
+              </div><!-- #preview-blockquote -->
+
+              <div id="markup-blockquote" class="tab--container">
+<pre class="prettyprint">
+&lt;blockquote&gt;
+  &lt;p&gt;Nunc id diam vitae nisl tempor tempus ac et orci. Nam sit amet porttitor purus. Praesent porttitor ultricies interdum. Proin sit amet dignissim dolor.&lt;/p&gt;
+  &lt;small&gt;Vlad Suciu&lt;/small&gt;
+&lt;/blockquote&gt;
+</pre>
+              </div><!-- #markup-blockquote -->
+            </div><!-- .tab -->
+
+            <hr />
+
+            <h3>Code Snippets</h3>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-code">Preview</a></li>
+                <li><a href="#markup-code">Markup</a></li>
+              </ul>
+
+              <div id="preview-code" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="test"&gt;
+    &lt;h3&gt;A test&lt;/h3&gt;
+&lt;/div&gt;
+</pre>
+
+<p>You can also use inline code formatting <code>.l-grid12</code></p>
+              </div><!-- #preview-code -->
+
+              <div id="markup-code" class="tab--container">
+<pre class="prettyprint">
+&lt;pre&gt;
+  &lt;div class="test"&gt;
+      &lt;h3&gt;A test&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;You can also use inline code formatting &lt;code&gt;.&lt;/code>&lt;/p&gt;
+</pre>
+              </div><!-- #markup-code -->
+            </div><!-- .tab -->
+            
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="form"></a>
+            <h2>Forms</h2>
+            <p>The form module comes in two formats:</p>
+
+            <ol>
+              <li>Horizontally Aligned</li>
+              <li>Vertically Aligned</li>
+            </ol>
+
+            <p>To use either one of these, a class on the parent <code>&lt;form&gt;</code> element is required. If you would like your html to follow a different structure but still have the beautifully form inputs just wrap the element in a container (usually a <code>div</code>) and set it's class to <code>.frm--input</code>.</p>
+            <p>The <code>input, select &amp; textarea</code> elements have the <code>box-sizing</code> set to <code>border-box</code> allowing us to have fluid form fields and take advantage of the <a href="#">Flexible Grid</a> without having to worry about the applied padding and border.</p>
+
+            <div class="msg msg-alert">
+              <h5>Forms &amp; the Flexible Grid</h5>
+              <p>The form module and the grid system go hand in hand. Simply apply one of the grid classes to the form fields.
+            </div>
+
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.frm</code> (horizontally aligned) <sup>1</sup></li>
+            </ul>
+
+            <p><sup>1</sup> Horizontal forms will automatically adjust to become vertically structured according to the screen view size.</p>
+
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.frm-vertical</code> must extend <code>.frm</code></li>
+            </ul>
+
+            <h3>Horizontal Form</h3>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-hform">Preview</a></li>
+                <li><a href="#markup-hform">Markup</a></li>
+              </ul>
+
+              <div id="preview-hform" class="tab--container">
+
+              <form class="frm">
+                <div class="frm--field">
+                  <label>Label</label>
+                  <div class="frm--input">
+                    <input type="text" class="l-grid12" placeholder="Type something…" />
+                    <p class="frm--help">This is a simple block. Pellentesque habitant morbi tristique senectus.</p>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Upload file</label>
+                  <div class="frm--input">
+                    <input class="input-file" id="fileInput" type="file">
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Select a type</label>
+                  <div class="frm--input">
+                    <select class="l-grid12" id="select01">
+                      <option>Option 1</option>
+                      <option>Option 2</option>
+                      <option>Option 3</option>
+                      <option>Option 4</option>
+                      <option>Option 5</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Select multiple types</label>
+                  <div class="frm--input">
+                    <select class="l-grid12" id="select01" multiple="multiple">
+                      <option>Option 1</option>
+                      <option>Option 2</option>
+                      <option>Option 3</option>
+                      <option>Option 4</option>
+                      <option>Option 5</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Checkbox label</label>
+                  <div class="frm--input">
+                    <label class="frm--checkbox">
+                      <input type="checkbox" id="checkbox1" value="checkbox1" />
+                      Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.
+                    </label>
+                    <label class="frm--checkbox">
+                      <input type="checkbox" id="checkbox2" value="checkbox2" />
+                      Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Radio label</label>
+                  <div class="frm--input">
+                    <label class="frm--radio">
+                      <input type="radio" id="radio1" name="radio1" value="radio1">
+                      Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.
+                    </label>
+                    <label class="frm--radio">
+                      <input type="radio" id="radio2" name="radio2" value="radio2">
+                      Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Inline checkbox</label>
+                  <div class="frm--input">
+                    <label class="frm--checkbox frm--checkbox-inline">
+                      <input type="checkbox" id="checkbox3" value="checkbox3"> Inline checkbox
+                    </label>
+                    <label class="frm--checkbox frm--checkbox-inline">
+                        <input type="checkbox" id="checkbox3" value="checkbox3"> Inline checkbox 2
+                      </label>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Inline radio</label>
+                  <div class="frm--input">
+                    <label class="frm--radio frm--radio-inline">
+                      <input type="radio" id="radio3" value="radio3"> Inline checkbox
+                    </label>
+                    <label class="frm--radio frm--radio-inline">
+                        <input type="radio" id="radio4" value="radio4"> Inline radio
+                      </label>
+                  </div>
+                </div>
+              </form>
+
+              </div><!-- preview-vertical -->
+
+              <div id="markup-hform" class="tab--container">
+<pre class="prettyprint">
+&lt;form class="frm"&gt;
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;input type="text" class="l-grid12" placeholder="Type something…" /&gt;
+      &lt;p class="frm--help"&gt;This is a simple block. Pellentesque habitant morbi tristique senectus.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Upload file&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;input class="input-file" id="fileInput" type="file"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Select a type&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;select class="l-grid12" id="select01"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+        &lt;option&gt;Option 3&lt;/option&gt;
+        &lt;option&gt;Option 4&lt;/option&gt;
+        &lt;option&gt;Option 5&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Select multiple types&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;select class="l-grid12" id="select01" multiple="multiple"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+        &lt;option&gt;Option 3&lt;/option&gt;
+        &lt;option&gt;Option 4&lt;/option&gt;
+        &lt;option&gt;Option 5&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Checkbox label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--checkbox"&gt;
+        &lt;input type="checkbox" id="checkbox1" value="checkbox1" /&gt;
+        Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.
+      &lt;/label&gt;
+      &lt;label class="frm--checkbox"&gt;
+        &lt;input type="checkbox" id="checkbox2" value="checkbox2" /&gt;
+        Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Radio label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--radio"&gt;
+        &lt;input type="radio" id="radio1" name="radio1" value="radio1"&gt;
+        Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.
+      &lt;/label&gt;
+      &lt;label class="frm--radio"&gt;
+        &lt;input type="radio" id="radio2" name="radio2" value="radio2"&gt;
+        Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Inline checkbox&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--checkbox frm--checkbox-inline"&gt;
+        &lt;input type="checkbox" id="checkbox3" value="checkbox3"&gt; Inline checkbox
+      &lt;/label&gt;
+      &lt;label class="frm--checkbox frm--checkbox-inline"&gt;
+          &lt;input type="checkbox" id="checkbox3" value="checkbox3"&gt; Inline checkbox 2
+        &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Inline radio&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--radio frm--radio-inline"&gt;
+        &lt;input type="radio" id="radio3" value="radio3"&gt; Inline checkbox
+      &lt;/label&gt;
+      &lt;label class="frm--radio frm--radio-inline"&gt;
+          &lt;input type="radio" id="radio4" value="radio4"&gt; Inline radio
+        &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+            <hr />
+
+            <h3>Vertical Form</h3>
+            <p>The markup for the vertical form is the same as for the horizontally aligned form. </p>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-vform">Preview</a></li>
+                <li><a href="#markup-vform">Markup</a></li>
+              </ul>
+
+              <div id="preview-vform" class="tab--container">
+
+              <form class="frm frm-vertical">
+                <div class="frm--field">
+                  <label>Label</label>
+                  <div class="frm--input">
+                    <input type="text" class="l-grid12" placeholder="Type something…" />
+                    <p class="frm--help">This is a simple block. Pellentesque habitant morbi tristique senectus.</p>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Upload file</label>
+                  <div class="frm--input">
+                    <input class="input-file" id="fileInput" type="file">
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Select a type</label>
+                  <div class="frm--input">
+                    <select class="l-grid12" id="select01">
+                      <option>Option 1</option>
+                      <option>Option 2</option>
+                      <option>Option 3</option>
+                      <option>Option 4</option>
+                      <option>Option 5</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Select multiple types</label>
+                  <div class="frm--input">
+                    <select class="l-grid12" id="select01" multiple="multiple">
+                      <option>Option 1</option>
+                      <option>Option 2</option>
+                      <option>Option 3</option>
+                      <option>Option 4</option>
+                      <option>Option 5</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Checkbox label</label>
+                  <div class="frm--input">
+                    <label class="frm--checkbox">
+                      <input type="checkbox" id="checkbox1" value="checkbox1" />
+                      Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.
+                    </label>
+                    <label class="frm--checkbox">
+                      <input type="checkbox" id="checkbox2" value="checkbox2" />
+                      Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Radio label</label>
+                  <div class="frm--input">
+                    <label class="frm--radio">
+                      <input type="radio" id="radio1" name="radio1" value="radio1">
+                      Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.
+                    </label>
+                    <label class="frm--radio">
+                      <input type="radio" id="radio2" name="radio2" value="radio2">
+                      Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Inline checkbox</label>
+                  <div class="frm--input">
+                    <label class="frm--checkbox frm--checkbox-inline">
+                      <input type="checkbox" id="checkbox3" value="checkbox3"> Inline checkbox
+                    </label>
+                    <label class="frm--checkbox frm--checkbox-inline">
+                        <input type="checkbox" id="checkbox3" value="checkbox3"> Inline checkbox 2
+                      </label>
+                  </div>
+                </div>
+
+                <div class="frm--field">
+                  <label>Inline radio</label>
+                  <div class="frm--input">
+                    <label class="frm--radio frm--radio-inline">
+                      <input type="radio" id="radio3" value="radio3"> Inline checkbox
+                    </label>
+                    <label class="frm--radio frm--radio-inline">
+                        <input type="radio" id="radio4" value="radio4"> Inline radio
+                      </label>
+                  </div>
+                </div>
+              </form>
+
+              </div><!-- preview-vertical -->
+
+              <div id="markup-vform" class="tab--container">
+<pre class="prettyprint">
+&lt;form class="frm ftm-vertical"&gt;
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;input type="text" class="l-grid12" placeholder="Type something…" /&gt;
+      &lt;p class="frm--help"&gt;This is a simple block. Pellentesque habitant morbi tristique senectus.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Upload file&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;input class="input-file" id="fileInput" type="file"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Select a type&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;select class="l-grid12" id="select01"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+        &lt;option&gt;Option 3&lt;/option&gt;
+        &lt;option&gt;Option 4&lt;/option&gt;
+        &lt;option&gt;Option 5&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Select multiple types&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;select class="l-grid12" id="select01" multiple="multiple"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+        &lt;option&gt;Option 3&lt;/option&gt;
+        &lt;option&gt;Option 4&lt;/option&gt;
+        &lt;option&gt;Option 5&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Checkbox label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--checkbox"&gt;
+        &lt;input type="checkbox" id="checkbox1" value="checkbox1" /&gt;
+        Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.
+      &lt;/label&gt;
+      &lt;label class="frm--checkbox"&gt;
+        &lt;input type="checkbox" id="checkbox2" value="checkbox2" /&gt;
+        Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Radio label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--radio"&gt;
+        &lt;input type="radio" id="radio1" name="radio1" value="radio1"&gt;
+        Vestibulum enim est, iaculis porttitor tincidunt a, semper et neque.
+      &lt;/label&gt;
+      &lt;label class="frm--radio"&gt;
+        &lt;input type="radio" id="radio2" name="radio2" value="radio2"&gt;
+        Donec lorem turpis, convallis quis eleifend et, lacinia in nibh.
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Inline checkbox&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--checkbox frm--checkbox-inline"&gt;
+        &lt;input type="checkbox" id="checkbox3" value="checkbox3"&gt; Inline checkbox
+      &lt;/label&gt;
+      &lt;label class="frm--checkbox frm--checkbox-inline"&gt;
+          &lt;input type="checkbox" id="checkbox3" value="checkbox3"&gt; Inline checkbox 2
+        &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Inline radio&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--radio frm--radio-inline"&gt;
+        &lt;input type="radio" id="radio3" value="radio3"&gt; Inline checkbox
+      &lt;/label&gt;
+      &lt;label class="frm--radio frm--radio-inline"&gt;
+          &lt;input type="radio" id="radio4" value="radio4"&gt; Inline radio
+        &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+            <hr />
+
+            <h3>Inputs, Selects, Textareas, Checkboxes, Radios &amp; File inputs</h3>
+            <p>The form fields can live on their own without requiring a specific structure or a <code>&lt;form&gt;</code> container except wrapping them into a parent element with a class of <code>.frm--input</code>.</p>
+
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.frm--input</code></li>
+            </ul>            
+
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.frm--input-error</code> must extend <code>.frm-input</code></li>
+              <li><code>.frm--input-success</code> must extend <code>.frm-input</code></li>
+            </ul>
+
+            <h5>Availability</h5>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Error</th>
+                  <th>Success</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>input[type=text]</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>select</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>textarea</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>input[type=file]</td>
+                  <td>&times;</td>
+                  <td>&times;</td>
+                </tr>
+
+                <tr>
+                  <td>input[type=checkbox]</td>
+                  <td>&times;</td>
+                  <td>&times;</td>
+                </tr>
+
+                <tr>
+                  <td>input[type=radio]</td>
+                  <td>&times;</td>
+                  <td>&times;</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-inputextension">Preview</a></li>
+                <li><a href="#markup-inputextension">Markup</a></li>
+              </ul>
+
+              <div id="preview-inputextension" class="tab--container">
+
+                <form class="frm frm-vertical">
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input frm--input-error">
+                      <input type="text" class="l-grid12" placeholder="Type something…" />
+                      <p class="frm--help">This is an input with a error state.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input frm--input--sucess">
+                      <input type="text" class="l-grid12" placeholder="Type something…" />
+                      <p class="frm--help">This is an input with a success state.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Select a type</label>
+                    <div class="frm--input frm--input-error">
+                      <select class="l-grid12" id="select01">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                      </select>
+                      <p class="frm--help">This is a select with an error state.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Select a type</label>
+                    <div class="frm--input frm--input--sucess">
+                      <select class="l-grid12" id="select01">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                      </select>
+                      <p class="frm--help">This is a select with a success state.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input frm--input-error">
+                      <textarea class="l-grid12" rows="5"></textarea>
+                      <p class="frm--help">This is a textarea with an error state.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input frm--input--sucess">
+                      <textarea class="l-grid12" rows="5"></textarea>
+                      <p class="frm--help">This is a textarea with a success state.</p>
+                    </div>
+                  </div>
+                </form>
+
+              </div><!-- preview-vertical -->
+
+              <div id="markup-inputextension" class="tab--container">
+<pre class="prettyprint">
+&lt;form class="frm frm-vertical"&gt;
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input frm--input-error"&gt;
+      &lt;input type="text" class="l-grid12" placeholder="Type something…" /&gt;
+      &lt;p class="frm--help"&gt;This is an input with a error state.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input frm--input--sucess"&gt;
+      &lt;input type="text" class="l-grid12" placeholder="Type something…" /&gt;
+      &lt;p class="frm--help"&gt;This is an input with a success state.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Select a type&lt;/label&gt;
+    &lt;div class="frm--input frm--input-error"&gt;
+      &lt;select class="l-grid12" id="select01"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+        &lt;option&gt;Option 3&lt;/option&gt;
+        &lt;option&gt;Option 4&lt;/option&gt;
+        &lt;option&gt;Option 5&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;p class="frm--help"&gt;This is a select with an error state.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Select a type&lt;/label&gt;
+    &lt;div class="frm--input frm--input--sucess"&gt;
+      &lt;select class="l-grid12" id="select01"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+        &lt;option&gt;Option 3&lt;/option&gt;
+        &lt;option&gt;Option 4&lt;/option&gt;
+        &lt;option&gt;Option 5&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;p class="frm--help"&gt;This is a select with a success state.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input frm--input-error"&gt;
+      &lt;textarea class="l-grid12" rows="5"&gt;&lt;/textarea&gt;
+      &lt;p class="frm--help"&gt;This is a textarea with an error state.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input frm--input--sucess"&gt;
+      &lt;textarea class="l-grid12" rows="5"&gt;&lt;/textarea&gt;
+      &lt;p class="frm--help"&gt;This is a textarea with a success state.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+
+            <h3>States</h3>
+            <ul class="ul-square">
+              <li>Hover</li>
+              <li>Focus</li>
+              <li>Disabled</li>
+            </ul>
+
+            <h5>Availability</h5>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Hover</th>
+                  <th>Focus</th>
+                  <th>Disabled</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>input[type=text]</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>select</td>
+                  <td>&#10003;</td>
+                  <td>&times;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>textarea</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>input[type=file]</td>
+                  <td>&times;</td>
+                  <td>&times;</td>
+                  <td>&times;</td>
+                </tr>
+
+                <tr>
+                  <td>input[type=checkbox]</td>
+                  <td>&times;</td>
+                  <td>&times;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>input[type=radio]</td>
+                  <td>&times;</td>
+                  <td>&times;</td>
+                  <td>&#10003;</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-formstates">Preview</a></li>
+                <li><a href="#markup-formstates">Markup</a></li>
+              </ul>
+
+              <div id="preview-formstates" class="tab--container">
+
+                <form class="frm frm-vertical">
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input">
+                      <input type="text" class="l-grid12" placeholder="Type something…" />
+                      <p class="frm--help">This is a regular input. It's here for testing the <strong>hover</strong> and <strong>focus</strong> states.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input">
+                      <input type="text" disabled="disabled" class="l-grid12" placeholder="Type something…" />
+                      <p class="frm--help">This is a disabled input.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Select a type</label>
+                    <div class="frm--input">
+                      <select class="l-grid12" id="select01">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                      </select>
+                      <p class="frm--help">This is a regular select. It's here for testing the <strong>hover</strong> and <strong>focus</strong> states.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Select a type</label>
+                    <div class="frm--input">
+                      <select disabled="disabled" class="l-grid12" id="select01">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                      </select>
+                      <p class="frm--help">This is a disabled select.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input">
+                      <textarea class="l-grid12" rows="5"></textarea>
+                      <p class="frm--help">This is a regular textarea. It's here for testing the <strong>hover</strong> and <strong>focus</strong> states.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input">
+                      <textarea class="l-grid12" rows="5" disabled="disabled"></textarea>
+                      <p class="frm--help">This is a disabled textarea.</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Checkbox label</label>
+                    <div class="frm--input">
+                      <label class="frm--checkbox">
+                        <input type="checkbox" id="checkbox1" value="checkbox1" disabled />
+                        This is a disabled checkbox
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label>Radio label</label>
+                    <div class="frm--input">
+                      <label class="frm--radio">
+                        <input type="radio" id="checkbox1" value="checkbox1" disabled />
+                        This is a disabled radio
+                      </label>
+                    </div>
+                  </div>
+                </form>
+
+              </div><!-- preview-vertical -->
+
+              <div id="markup-formstates" class="tab--container">
+<pre class="prettyprint">
+&lt;form class="frm frm-vertical"&gt;
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;input type="text" class="l-grid12" placeholder="Type something…" /&gt;
+      &lt;p class="frm--help"&gt;This is a regular input. It's here for testing the &lt;strong&gt;hover&lt;/strong&gt; and &lt;strong&gt;focus&lt;/strong&gt; states.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;input type="text" disabled="disabled" class="l-grid12" placeholder="Type something…" /&gt;
+      &lt;p class="frm--help"&gt;This is a disabled input.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Select a type&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;select class="l-grid12" id="select01"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+        &lt;option&gt;Option 3&lt;/option&gt;
+        &lt;option&gt;Option 4&lt;/option&gt;
+        &lt;option&gt;Option 5&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;p class="frm--help"&gt;This is a regular select. It's here for testing the &lt;strong&gt;hover&lt;/strong&gt; and &lt;strong&gt;focus&lt;/strong&gt; states.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Select a type&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;select disabled="disabled" class="l-grid12" id="select01"&gt;
+        &lt;option&gt;Option 1&lt;/option&gt;
+        &lt;option&gt;Option 2&lt;/option&gt;
+        &lt;option&gt;Option 3&lt;/option&gt;
+        &lt;option&gt;Option 4&lt;/option&gt;
+        &lt;option&gt;Option 5&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;p class="frm--help"&gt;This is a disabled select.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;textarea class="l-grid12" rows="5"&gt;&lt;/textarea&gt;
+      &lt;p class="frm--help"&gt;This is a regular textarea. It's here for testing the &lt;strong&gt;hover&lt;/strong&gt; and &lt;strong&gt;focus&lt;/strong&gt; states.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;textarea class="l-grid12" rows="5" disabled="disabled"&gt;&lt;/textarea&gt;
+      &lt;p class="frm--help"&gt;This is a disabled textarea.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Checkbox label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--checkbox"&gt;
+        &lt;input type="checkbox" id="checkbox1" value="checkbox1" disabled /&gt;
+        This is a disabled checkbox
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Radio label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;label class="frm--radio"&gt;
+        &lt;input type="radio" id="checkbox1" value="checkbox1" disabled /&gt;
+        This is a disabled radio
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+            <h4>Caveats</h4>
+            <p>Internet Explorer 7 or older versions do not support the <code>box-sizing</code> property so the form elements that have the <code>width</code> set to <code>100%</code> will go beyond their parent container.</p>
+            <p>More info about a box-sizing polyfill for older browsers can be found at <a href="http://html5please.com/#box-sizing">html5please.com</a>.</p>
+            <h4>Browser Support</h4>
+            <h5>Extensions</h5>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>IE7+</th>
+                  <th>Firebox</th>
+                  <th>Chrome</th>
+                  <th>Opera</th>
+                  <th>Safari</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>.frm--input-error</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>.frm--input-success</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h5>States</h5>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>IE7</th>
+                  <th>IE8+</th>
+                  <th>Firefox</th>
+                  <th>Chrome</th>
+                  <th>Opera</th>
+                  <th>Safari</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Hover</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>Focus</td>
+                  <td>&times;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+
+                <tr>
+                  <td>Disabled</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr />
+            <h3>Form Help</h3>
+            <p>Use the form help submodule to provide the user with feedback and instructions.</p>
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.frm--help-inline</code> must extend <code>.frm--help</code>.</li>
+            </ul>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-form-help">Preview</a></li>
+                <li><a href="#markup-form-help">Markup</a></li>
+              </ul>
+
+              <div id="preview-form-help" class="tab--container">
+                <form class="frm frm-vertical">
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input">
+                      <input type="text" class="l-grid6" placeholder="Type something…" />
+                      <p class="frm--help frm--help-inline">This is a simple inline form help.</p>
+                    </div>
+                  </div>
+                  <div class="frm--field">
+                    <label>Label</label>
+                    <div class="frm--input frm--input-error">
+                      <input type="text" class="l-grid6" placeholder="Type something…" />
+                      <p class="frm--help frm--help-inline">Color changes based on input's parent class.</p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div id="markup-form-help" class="tab--container">
+<pre class="prettyprint">
+&lt;form class="frm frm-vertical"&gt;
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input"&gt;
+      &lt;input type="text" class="l-grid6" placeholder="Type something…" /&gt;
+      &lt;p class="frm--help frm--help-inline"&gt;This is a simple inline form help.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="frm--field"&gt;
+    &lt;label&gt;Label&lt;/label&gt;
+    &lt;div class="frm--input frm--input-error"&gt;
+      &lt;input type="text" class="l-grid6" placeholder="Type something…" /&gt;
+      &lt;p class="frm--help frm--help-inline"&gt;Color changes based on input's parent class.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="button"></a>
+            <h2>Buttons</h2>
+            <p>The button module comes out of the box with three diferent colors.</p>
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.btn</code></li>
+            </ul>
+            <h4>Extend</h4>
+            <div class="l-row">
+              <div class="l-grid6">
+                <ul class="ul-square">
+                  <li><code>.btn-submit</code> must extend <code>.btn</code></li>
+                  <li><code>.btn-cta</code> must extend <code>.btn</code></li>
+                </ul>
+              </div><!-- l-grid6 -->
+
+              <div class="l-grid6">
+                <ul class="ul-square">
+                  <li><code>.btn-rounded</code> must extend <code>.btn</code></li>
+                </ul>
+              </div><!-- l-grid6 -->
+            </div>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-buttons">Preview</a></li>
+                <li><a href="#markup-buttons">Markup</a></li>
+              </ul>
+
+              <div id="preview-buttons" class="tab--container">
+                <a class="btn" href="#">Default Button</a>
+                <a class="btn btn-submit" href="#">Submit Button</a>
+                <a class="btn btn-cta" href="#">CTA Button</a>
+                <a class="btn btn-rounded" href="#">Rounded Button</a>
+              </div>
+              <div id="markup-buttons" class="tab--container">
+<pre class="prettyprint">
+&lt;a class="btn" href="#"&gt;Default Button&lt;/a&gt;
+&lt;a class="btn btn-submit" href="#"&gt;Submit Button&lt;/a&gt;
+&lt;a class="btn btn-cta" href="#"&gt;CTA Button&lt;/a&gt;
+&lt;a class="btn btn-rounded" href="#"&gt;Default Button&lt;/a&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+
+            <h4>States</h4>
+            <ul class="ul-square">
+              <li>Disabled</li>
+            </ul>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-buttons">Preview</a></li>
+                <li><a href="#markup-buttons">Markup</a></li>
+              </ul>
+
+              <div id="preview-buttons" class="tab--container">
+                <a class="btn" disabled="disabled" href="#">Default Button</a>
+                <a class="btn btn-submit" disabled="disabled" href="#">Submit Button</a>
+                <a class="btn btn-cta is-btn-disabled" href="#">CTA Button</a>
+                <a class="btn btn-rounded" disabled="disabled" href="#">Rounded Button</a>
+              </div><!-- #preview-buttons -->
+              <div id="markup-buttons" class="tab--container">
+<pre class="prettyprint">
+&lt;a class="btn" disabled="disabled" href="#"&gt;Default Button&lt;/a&gt;
+&lt;a class="btn btn-submit" disabled="disabled" href="#"&gt;Submit Button&lt;/a&gt;
+&lt;a class="btn btn-cta" is-btn-disabled href="#"&gt;CTA Button&lt;/a&gt;
+&lt;a class="btn btn-rounded" disabled="disabled" href="#"&gt;Rounded Button&lt;/a&gt;
+</pre>
+              </div><!-- #markup-buttons -->
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="toolbar"></a>
+            <h2>Toolbar</h2>
+            <p>The toolbar is basically a collection of buttons that are grouped together.</p>
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.tlb</code></li>
+            </ul>
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.tlb--group-rounded</code> must extend <code>.tlb-group</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-toolbar">Preview</a></li>
+                <li><a href="#markup-toolbar">Markup</a></li>
+              </ul>
+
+              <div id="preview-toolbar" class="tab--container">
+                <div class="tlb">
+                  <div class="tlb--group">
+                    <a class="btn" href="#">Item 1</a>
+                    <a class="btn" href="#">Item 2</a>
+                    <a class="btn" href="#">Item 3</a>
+                  </div>
+
+                  <div class="tlb--group tlb--group-rounded">
+                    <a class="btn btn-submit" href="#">Item 1</a>
+                    <a class="btn btn-submit" href="#">Item 2</a>
+                  </div>
+                </div>
+              </div><!-- #preview-toolbar -->
+              <div id="markup-toolbar" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="tlb"&gt;
+  &lt;div class="tlb--group"&gt;
+    &lt;a class="btn" href="#"&gt;Item 1&lt;/a&gt;
+    &lt;a class="btn" href="#"&gt;Item 2&lt;/a&gt;
+    &lt;a class="btn" href="#"&gt;Item 3&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div class="tlb--group tlb--group-rounded"&gt;
+    &lt;a class="btn btn-submit" href="#"&gt;Item 1&lt;/a&gt;
+    &lt;a class="btn btn-submit" href="#"&gt;Item 2&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+              </div><!-- #markup-buttons -->
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="message"></a>
+            <h2>
+              Messages
+              <small class="l-right">Requires Javascript</small>
+            </h2>
+            <p>The message module comes like the rest of the <strong>Flex</strong> framework with a clean &amp; minimal interface that can be easily customised to your needs. Furthermore the <strong>close</strong> module can be appended for dismissing the message.</p>
+            <h3>Class</h3>
+            <ul class="ul-square">
+              <li><code>.msg</code></li>
+            </ul>
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.msg-error</code> must extend <code>.msg</code></li>
+              <li><code>.msg-alert</code> must extend <code>.msg</code></li>
+              <li><code>.msg-success</code> must extend <code>.msg</code></li>
+              <li><code>.msg-notice</code> must extend <code>.msg</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-msg">Preview</a></li>
+                <li><a href="#markup-msg">Markup</a></li>
+              </ul>
+
+              <div id="preview-msg" class="tab--container">
+                <div class="msg">
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                  <a href="#" class="cls">&times;</a>
+                </div>
+
+                <div class="msg msg-error">
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                  <a href="#" class="cls">&times;</a>
+                </div>
+
+                <div class="msg msg-alert">
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                  <a href="#" class="cls">&times;</a>
+                </div>
+
+                <div class="msg msg-success">
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                  <a href="#" class="cls">&times;</a>
+                </div>
+
+                <div class="msg msg-notice">
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                  <a href="#" class="cls">&times;</a>
+                </div>
+              </div><!-- #preview-msg -->
+              <div id="markup-msg" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="msg"&gt;
+  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+  &lt;a href="#" class="cls"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="msg msg-error"&gt;
+  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+  &lt;a href="#" class="cls"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="msg msg-alert"&gt;
+  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+  &lt;a href="#" class="cls"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="msg msg-success"&gt;
+  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+  &lt;a href="#" class="cls"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="msg msg-notice"&gt;
+  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+  &lt;a href="#" class="cls"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+              </div><!-- #markup-msg -->
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="label"></a>
+            <h2>Label</h2>
+            <p>Use labels to easily emphasize certain words and phrases.</p>
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.lbl</code></li>
+            </ul>
+            <h4>Extend</h4>
+            <div class="l-row">
+              <div class="l-grid6">
+                <ul class="ul-square">
+                  <li><code>.lbl-error</code> must extend <code>.lbl</code></li>
+                  <li><code>.lbl-alert</code> must extend <code>.lbl</code></li>
+                  <li><code>.lbl-success</code> must extend <code>.lbl</code></li>
+                  <li><code>.lbl-notice</code> must extend <code>.lbl</code></li>
+                </ul>
+              </div><!-- .l-grid6 -->
+
+              <div class="l-grid6">
+                <ul class="ul-square">
+                  <li><code>.lbl-round</code> must extend <code>.lbl</code></li>
+                </ul>
+              </div><!-- .l-grid6 -->
+            </div><!-- .l-row -->
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-lbl">Preview</a></li>
+                <li><a href="#markup-lbl">Markup</a></li>
+              </ul>
+
+              <div id="preview-lbl" class="tab--container">
+                <p>It is a <span class="lbl">long</span> established fact that a <span class="lbl lbl-rounded lbl-error">reader will</span> be distracted by the readable content of a page <span class="lbl lbl-alert">when looking</span> at its layout. The point of using <span class="lbl lbl-success">Lorem Ipsum</span>. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, <span class="lbl lbl-rounded lbl-notice">as opposed to using</span> 'Content here, content here', making it look like readable English.</p>
+              </div><!-- #preview-lbl -->
+              <div id="markup-lbl" class="tab--container">
+<pre class="prettyprint">
+&lt;p&gt;It is a &lt;span class="lbl"&gt;long&lt;/span&gt; established fact that a &lt;span class="lbl lbl-rounded lbl-error"&gt;reader will&lt;/span&gt; be distracted by the readable content of a page &lt;span class="lbl lbl-alert"&gt;when looking&lt;/span&gt; at its layout. The point of using &lt;span class="lbl lbl-success"&gt;Lorem Ipsum&lt;/span&gt;. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, &lt;span class="lbl lbl-rounded lbl-notice"&gt;as opposed to using&lt;/span&gt; 'Content here, content here', making it look like readable English.&lt;/p
+</pre>
+              </div><!-- #markup-lbl -->
+            </div><!-- .tab -->
+
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="table"></a>
+            <h2>Table</h2>
+            <p>Tables are perfectly suited for displaying tabular data. The module comes with different three different extensions that can be combined together and one hover state.</p>
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.tbl</code></li>
+            </ul>
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.tbl-striped</code> must extend <code>.tbl</code></li>
+              <li><code>.tbl-bordered</code> must extend <code>.tbl</code></li>
+              <li><code>.tbl-rounded</code> must extend <code>.tbl-bordered</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-tbl">Preview</a></li>
+                <li><a href="#markup-tbl">Markup</a></li>
+              </ul>
+
+              <div id="preview-tbl" class="tab--container">
+                <table class="tbl">
+                  <thead>
+                    <tr>
+                      <th>Heading 1</th>
+                      <th>Heading 2</th>
+                      <th>Heading 3</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over</td>
+                    </tr>
+
+                    <tr>
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over</td>
+                    </tr>
+
+                    <tr>
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table class="tbl tbl-striped tbl-bordered">
+                  <thead>
+                    <tr>
+                      <th>Heading 1</th>
+                      <th>Heading 2</th>
+                      <th>Heading 3</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over</td>
+                    </tr>
+
+                    <tr>
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over</td>
+                    </tr>
+
+                    <tr>
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over2</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- #preview-tbl -->
+              <div id="markup-tbl" class="tab--container">
+<pre class="prettyprint">
+&lt;table class="tbl"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Heading 1&lt;/th&gt;
+      &lt;th&gt;Heading 2&lt;/th&gt;
+      &lt;th&gt;Heading 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table class="tbl tbl-striped tbl-bordered"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Heading 1&lt;/th&gt;
+      &lt;th&gt;Heading 2&lt;/th&gt;
+      &lt;th&gt;Heading 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+              </div><!-- #markup-tbl -->
+            </div><!-- .tab -->
+
+            <h4>States</h4>
+            <ul class="ul-square">
+              <li>Selected</li>
+            </ul>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-tblstate">Preview</a></li>
+                <li><a href="#markup-tblstate">Markup</a></li>
+              </ul>
+
+              <div id="preview-tblstate" class="tab--container">
+                <table class="tbl">
+                  <thead>
+                    <tr>
+                      <th>Heading 1</th>
+                      <th>Heading 2</th>
+                      <th>Heading 3</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over</td>
+                    </tr>
+
+                    <tr class="is-row-selected">
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over</td>
+                    </tr>
+
+                    <tr class="is-row-selected">
+                      <td>It is a long established</td>
+                      <td>Many desktop publishing packages</td>
+                      <td>Various versions have evolved over</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="markup-tblstate" class="tab--container">
+<pre class="prettyprint">
+&lt;table class="tbl"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Heading 1&lt;/th&gt;
+      &lt;th&gt;Heading 2&lt;/th&gt;
+      &lt;th&gt;Heading 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr class="is-row-selected"&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr class="is-row-selected"&gt;
+      &lt;td&gt;It is a long established&lt;/td&gt;
+      &lt;td&gt;Many desktop publishing packages&lt;/td&gt;
+      &lt;td&gt;Various versions have evolved over&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="subnav"></a>
+            <h2>Sub Nav</h2>
+            <p>The secondary navigation comes with one base class and an extension that is shared with the responsive version.</p>
+            
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.sav</code> (horizontally aligned)<sup>1</sup></li>
+            </ul>
+
+            <ol>
+              <li>Will automatically adjust to become vertically structured if the view is smaller than 480px.</li>
+            </ol>
+
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.sav-vertical</code> must extend <code>.sav</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-sav">Preview</a></li>
+                <li><a href="#markup-sav">Markup</a></li>
+              </ul>
+
+              <div id="preview-sav" class="tab--container">
+                <ul class="sav">
+                  <li class="sav-active"><a href="#">Menu Item 1</a></li>
+                  <li><a href="#">Menu Item 2</a></li>
+                  <li><a href="#">Menu Item 3</a></li>
+                  <li><a href="#">Menu Item 4</a></li>
+                  <li><a href="#">Menu Item 5</a></li>
+                </ul>
+              </div><!-- #preview-sav -->
+              <div id="markup-sav" class="tab--container">
+<pre class="prettyprint">
+&lt;ul class="sav"&gt;
+  &lt;li class="sav-active"&gt;&lt;a href="#"&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Menu Item 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Menu Item 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Menu Item 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+              </div><!-- #markup-sav -->
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="pagination"></a>
+            <h2>Pagination</h2>
+            <p>Use pagination to divide results into pages for a better user experience.</p>
+            
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.pgn</code></li>
+            </ul>
+
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.pgn-rounded</code> must extend <code>.pgn</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-pgn">Preview</a></li>
+                <li><a href="#markup-pgn">Markup</a></li>
+              </ul>
+
+              <div id="preview-pgn" class="tab--container">
+                <nav class="pgn">
+                  <ul class="pgn--numbers">
+                    <li><a href="#" class="pgn--btn">1</a></li>
+                    <li><a href="#" class="pgn--btn">2</a></li>
+                    <li><span class="pgn--btn pgn--btn-current">3</span></li>
+                    <li><a href="#" class="pgn--btn">4</a></li>
+                    <li><span class="pgn--btn pgn--btn-gap">&hellip;</span></li>
+                    <li><a href="#" class="pgn--btn">6</a></li>
+                    <li><a href="#" class="pgn--btn">7</a></li>
+                  </ul>
+
+                  <ul class="pgn--nav">
+                    <li><a href="#" class="pgn--btn">&laquo; Previous</a></li>
+                    <li><span class="pgn--btn pgn--btn-text">Page 1 of 5</span></li>
+                    <li><a href="#" class="pgn--btn">Next &raquo;</a></li>
+                  </ul>
+                </nav>
+              </div><!-- #preview-pgn -->
+              <div id="markup-pgn" class="tab--container">
+<pre class="prettyprint">
+&lt;nav class="pgn"&gt;
+  &lt;ul class="pgn--numbers"&gt;
+    &lt;li&gt;&lt;a href="#" class="pgn--btn"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pgn--btn"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class="pgn--btn pgn--btn-current"&gt;3&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pgn--btn"&gt;4&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class="pgn--btn pgn--btn-gap"&gt;&hellip;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pgn--btn"&gt;6&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pgn--btn"&gt;7&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;ul class="pgn--nav"&gt;
+    &lt;li&gt;&lt;a href="#" class="pgn--btn"&gt;&laquo; Previous&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class="pgn--btn pgn--btn-text"&gt;Page 1 of 5&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pgn--btn"&gt;Next &raquo;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</pre>
+              </div><!-- #markup-pgn -->
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="tab"></a>
+            <h2>
+              Tab
+              <small class="l-right">Requires Javascript</small>
+            </h2>
+            
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.tab</code> (horizontally aligned)<sup>1</sup></li>
+            </ul>
+
+            <ol>
+              <li>Will automatically adjust to become vertically structured if the view is smaller than 480px.</li>
+            </ol>
+
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.tab-vertical</code> must extend <code>.tab</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-tav">Preview</a></li>
+                <li><a href="#markup-tav">Markup</a></li>
+              </ul>
+
+              <div id="preview-tav" class="tab--container">
+                <div class="tab" data-trigger="tab">
+                  <ul class="tab--nav">
+                    <li><a href="#item1">Tab Item 1</a></li>
+                    <li><a href="#item2">Tab Item 2</a></li>
+                  </ul>
+
+                  <div id="item1" class="tab--container">
+                    <h6>Ut aliquet tincidunt pellentesque</h6>
+                    <p>Maecenas ipsum nisi, laoreet ut placerat suscipit, euismod et leo. Aenean accumsan augue mauris, nec iaculis magna.</p>
+                  </div>
+
+                  <div id="item2" class="tab--container">
+                    <h6>Suspendisse magna ante</h6>
+                    <p>Suspendisse nisl urna, porttitor sed fringilla et, rutrum eget nibh. Nullam feugiat, mi nec elementum malesuada, neque ante volutpat mi, non sodales urna urna eget diam.</p>
+                  </div>
+                </div>
+              </div><!-- #preview-tab -->
+              <div id="markup-tav" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="tab" data-trigger="tab"&gt;
+  &lt;ul class="tab--nav"&gt;
+    &lt;li&gt;&lt;a href="#item1"&gt;Tab Item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#item2"&gt;Tab Item 2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div id="item1" class="tab--container"&gt;
+    &lt;h6&gt;Ut aliquet tincidunt pellentesque&lt;/h6&gt;
+    &lt;p&gt;Maecenas ipsum nisi, laoreet ut placerat suscipit, euismod et leo. Aenean accumsan augue mauris, nec iaculis magna.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div id="item2" class="tab--container"&gt;
+    &lt;h6&gt;Suspendisse magna ante&lt;/h6&gt;
+    &lt;p&gt;Suspendisse nisl urna, porttitor sed fringilla et, rutrum eget nibh. Nullam feugiat, mi nec elementum malesuada, neque ante volutpat mi, non sodales urna urna eget diam.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+              </div><!-- #markup-tab -->
+            </div><!-- .tab -->
+
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="dropdown"></a>
+            <h2>
+              Dropdown
+              <small class="l-right">Requires Javascript</small>
+            </h2>
+            <p>Make sure the <code>jquery.dropdown.js</code> plugin is included then follow the html structure as illustrated in the examples below.</p>
+            <p>You can combine the dropdown plugin with other modules like: <a href="#button">Button</a>, <a href="#subnav">Sub Nav</a>.</p>
+
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.drd</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-drdbasic">Preview</a></li>
+                <li><a href="#markup-drdbasic">Markup</a></li>
+              </ul>
+
+              <div id="preview-drdbasic" class="tab--container">
+                <div class="drd">
+                  <a class="drd--toggle" data-trigger="dropdown" href="#">Basic Dropdown</a>
+                  <div class="drd--menu">
+                    <h6>Sed auctor auctor felis</h6>
+                    <img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" />
+                    <p>Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. </p>
+                    <a class="btn btn-cta" href="#">Proceed to Checkout</a>
+                  </div>
+                </div>
+                <br />
+                <div class="drd">
+                  <a class="drd--toggle" data-trigger="dropdown" href="#">Dropdown with links</a>
+                  <ul class="drd--menu">
+                    <li><a href="#">Menu Item 1</a></li>
+                    <li><a href="#">Menu Item 2</a></li>
+                    <li><a href="#">Menu Item 3</a></li>
+                    <li><a href="#">Menu Item 4</a></li>
+                    <li class="drd--menu--sep"></li>
+                    <li><a href="#">Menu Item 5</a></li>
+                  </ul>
+                </div>
+              </div><!-- #preview-drdbasic -->
+              <div id="markup-drdbasic" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="drd"&gt;
+  &lt;a class="drd--toggle" data-trigger="dropdown" href="#"&gt;Basic Dropdown&lt;/a&gt;
+  &lt;div class="drd--menu"&gt;
+    &lt;h6&gt;Sed auctor auctor felis&lt;/h6&gt;
+    &lt;img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" /&gt;
+    &lt;p&gt;Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. &lt;/p&gt;
+    &lt;a class="btn btn-cta" href="#"&gt;Proceed to Checkout&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;div class="drd"&gt;
+  &lt;a class="drd--toggle" data-trigger="dropdown" href="#"&gt;Dropdown with links&lt;/a&gt;
+  &lt;ul class="drd--menu drd-menu-constrained"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 4&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="drd--menu--sep"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 5&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+              </div><!-- #markup-drdbasic -->
+            </div><!-- .tab -->
+
+            <hr />
+            <h3>Button</h3>
+            <p>Read more about the <a href="#button">Button Module</a>.</p>
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-drdbtn">Preview</a></li>
+                <li><a href="#markup-drdbtn">Markup</a></li>
+              </ul>
+
+              <div id="preview-drdbtn" class="tab--container">
+                <div class="drd">
+                  <a class="btn drd--toggle" data-trigger="dropdown" href="#">Dropdown button</a>
+                  <div class="drd--menu">
+                    <h6>Sed auctor auctor felis</h6>
+                    <img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" />
+                    <p>Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. </p>
+                  </div>
+                </div><!-- #preview-drdbtn -->
+                <br />
+                <div class="drd">
+                  <a class="btn btn-submit drd--toggle" data-trigger="dropdown" href="#">Dropdown button</a>
+                  <ul class="drd--menu">
+                    <li><a href="#">Menu Item 1</a></li>
+                    <li><a href="#">Menu Item 2</a></li>
+                    <li><a href="#">Menu Item 3</a></li>
+                    <li><a href="#">Menu Item 4</a></li>
+                    <li class="drd--menu--sep"></li>
+                    <li><a href="#">Menu Item 5</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div id="markup-drdbtn" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="drd"&gt;
+  &lt;a class="btn drd--toggle" data-trigger="dropdown" href="#"&gt;Dropdown button&lt;/a&gt;
+  &lt;div class="drd--menu"&gt;
+    &lt;h6&gt;Sed auctor auctor felis&lt;/h6&gt;
+    &lt;img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" /&gt;
+    &lt;p&gt;Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;div class="drd"&gt;
+  &lt;a class="btn btn-submit drd--toggle" data-trigger="dropdown" href="#"&gt;Dropdown button&lt;/a&gt;
+  &lt;ul class="drd--menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 4&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="drd--menu--sep"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Menu Item 5&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+              </div><!-- #markup-drdbtn -->
+            </div><!-- .tab -->
+
+            <hr />
+            <h3>Sub Nav</h3>
+            <p>Read more about the <a href="#subnav">Sub Nav Module</a>.</p>
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-drdsav">Preview</a></li>
+                <li><a href="#markup-drdsav">Markup</a></li>
+              </ul>
+
+              <div id="preview-drdsav" class="tab--container">
+                <ul class="sav">
+                  <li class="sav-active"><a href="#">Menu Item 1</a></li>
+                  <li><a href="#">Menu Item 2</a></li>
+                  <li><a href="#">Menu Item 3</a></li>
+                  <li class="drd">
+                    <a class="drd--toggle" data-trigger="dropdown" href="#">Menu Item 4</a>
+                    <ul class="drd--menu">
+                      <li><a href="#">Menu Item 1</a></li>
+                      <li><a href="#">Menu Item 2</a></li>
+                      <li><a href="#">Menu Item 3</a></li>
+                      <li><a href="#">Menu Item 4</a></li>
+                      <li class="drd--menu--sep"></li>
+                      <li><a href="#">Menu Item 5</a></li>
+                    </ul>
+                  </li>
+                  <li class="drd">
+                    <a class="drd--toggle" data-trigger="dropdown" href="#">Menu Item 4</a>
+                    <div class="drd--menu">
+                    <h6>Sed auctor auctor felis</h6>
+                    <img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" />
+                    <p>Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. </p>
+                  </div>
+                  </li>
+                </ul>
+              </div><!-- #preview-drdsav -->
+
+              <div id="markup-drdsav" class="tab--container">
+<pre class="prettyprint">
+&lt;ul class="sav"&gt;
+  &lt;li class="sav-active"&gt;&lt;a href="#"&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Menu Item 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="drd"&gt;
+    &lt;a class="drd--toggle" data-trigger="dropdown" href="#"&gt;Menu Item 4&lt;/a&gt;
+    &lt;ul class="drd--menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Menu Item 3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Menu Item 4&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="drd--menu--sep"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Menu Item 5&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class="drd"&gt;
+    &lt;a class="drd--toggle" data-trigger="dropdown" href="#"&gt;Menu Item 4&lt;/a&gt;
+    &lt;div class="drd--menu"&gt;
+    &lt;h6&gt;Sed auctor auctor felis&lt;/h6&gt;
+    &lt;img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" /&gt;
+    &lt;p&gt;Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+              </div><!-- #markup-drdsav -->
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="tooltip"></a>
+            <h2>
+              Tooltip
+              <small class="l-right">Requires Javascript</small>
+            </h2>
+            <p>Using the tooltip module is pretty simple: </p>
+            <ol>
+              <li>Make sure the <code>jquery.tooltip.js</code> plugin is included. </li>
+              <li>Apply <code>data-trigger="tooltip"</code> on any element element you want the tooltip to be activated on.</li>
+              <li>Use <code>data-content</code> attribute to supply content to the tooltip. If the element is an anchor you can just use the <code>title</code> attribute.</li>
+            </ol>
+
+            <div class="msg msg-alert">
+              <h5>Performance Improvements</h5>
+              <p>By default the tooltip plugin is not initialized until the very last moment (i.e. users hovers the html element). The technique is called <strong>deferred initialization</strong> and it's accomplished by using event capturing. Unfortunately it only works on browsers that support the W3C event model.</p>
+              <h6>Resources</h6>
+              <ol>
+                <li><a href="http://37signals.com/svn/posts/3137-using-event-capturing-to-improve-basecamp-page-load-times">Using event capturing to improve Basecamp page load times</a></li>
+              </ol>
+
+            </div><!-- .msg.msg-alert -->
+
+            <table class="tbl tbl-striped">
+              <thead>
+                <tr>
+                  <th>Attribute</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>content</td>
+                  <td>string / function</td>
+                  <td>N/A</td>
+                  <td>Tooltip content</td>
+                </tr>
+
+                <tr>
+                  <td>position</td>
+                  <td>string</td>
+                  <td>top</td>
+                  <td>left / top / right / botttom</td>
+                </tr>
+
+                <tr>
+                  <td>offset</td>
+                  <td>integer</td>
+                  <td>5</td>
+                  <td>How far is the tooltip positioned</td>
+                </tr>
+
+                <tr>
+                  <td>delayIn</td>
+                  <td>integer</td>
+                  <td>150</td>
+                  <td>Time before tooltip is shown</td>
+                </tr>
+
+                <tr>
+                  <td>delayOut</td>
+                  <td>integer</td>
+                  <td>50</td>
+                  <td>Time before tooltip is hidden</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><span class="lbl lbl-notice">Note:</span> You can still fire up the tooltip the regular old way by calling the <code>tooltip()</code> function on the element/set of elements and passing the desired options. </p>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-ttp">Preview</a></li>
+                <li><a href="#markup-ttp">Markup</a></li>
+              </ul>
+
+              <div id="preview-ttp" class="tab--container">
+                <p>Nulla eros nunc, <a data-trigger="tooltip" title="This is a default positioned tooltip" href="#">venenatis ut rutrum nec</a>, porta pulvinar tortor. Ut nunc nibh, tincidunt eu suscipit eu, pellentesque at mi. <strong data-trigger="tooltip" data-content="This is a left positioned tooltip" data-position="left">Aenean a velit</strong> mi, ut imperdiet nisi. Sed accumsan sapien in dui vestibulum viverra. Quisque vestibulum volutpat nisl sed facilisis. <strong data-trigger="tooltip" data-position="right" data-content="This is a right posisioned tooltip.">Nulla vitae nisl</strong> sed nisl euismod fringilla. Pellentesque euismod <strong data-trigger="tooltip" data-position="bottom" data-content="This is a bottom positioned tooltip">tempor risus</strong>, vitae blandit risus sodales non.</p>
+              </div><!-- #preview-ttp -->
+              <div id="markup-ttp" class="tab--container">
+<pre class="prettyprint">
+&lt;p&gt;
+Nulla eros nunc, &lt;a data-trigger="tooltip" title="This is a default positioned tooltip" href="#">venenatis ut rutrum nec&lt;/a>, porta pulvinar tortor. Ut nunc nibh, tincidunt eu suscipit eu, pellentesque at mi. &lt;strong data-trigger="tooltip" data-content="This is a left positioned tooltip" data-position="left">Aenean a velit&lt;/strong> mi, ut imperdiet nisi. Sed accumsan sapien in dui vestibulum viverra. Quisque vestibulum volutpat nisl sed facilisis. &lt;strong data-trigger="tooltip" data-position="right" data-content="This is a right posisioned tooltip.">Nulla vitae nisl&lt;/strong> sed nisl euismod fringilla. Pellentesque euismod &lt;strong data-trigger="tooltip" data-position="bottom" data-content="This is a bottom positioned tooltip">tempor risus&lt;/strong>, vitae blandit risus sodales non.
+&lt;/p&gt;
+</pre>
+              </div><!-- #markup-ttp -->
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="bubble"></a>
+            <h2>
+              Bubble
+              <small class="l-right">Requires Javascript</small>
+            </h2>
+            <p>Using the bubble module is pretty simple:</p>
+            <ol>
+              <li>Make sure that <code>jquery.tooltip.js</code> and <code>jquery.bubble.js</code> plugins are included. </li>
+              <li>Apply <code>data-trigger="bubble"</code> on any element element you want the bubble to be activated on.</li>
+              <li>Use <code>data-content="dummy text"</code> to supply content to the bubble. If the element is an anchor you can simply use the <code>title</code> attribute.</li>
+            </ol>
+
+            <div class="msg msg-alert">
+              <h5>Performance Improvements</h5>
+              <p>By default the bubble plugin is not initialized until the very last moment (i.e. users triggers the mouseenter/focus event on the html element). The technique is called <strong>deferred initialization</strong> and it's accomplished by using event capturing. Unfortunately it only works on browsers that support the W3C event model.</p>
+              <h6>Resources</h6>
+              <ol>
+                <li><a href="http://37signals.com/svn/posts/3137-using-event-capturing-to-improve-basecamp-page-load-times">Using event capturing to improve Basecamp page load times</a></li>
+              </ol>
+
+            </div><!-- .msg.msg-alert -->
+
+            <table class="tbl tbl-striped">
+              <thead>
+                <tr>
+                  <th>Attribute</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>content</td>
+                  <td>string / function</td>
+                  <td>N/A</td>
+                  <td>Bubble content</td>
+                </tr>
+
+                <tr>
+                  <td>position</td>
+                  <td>string</td>
+                  <td>top</td>
+                  <td>left / top / right / botttom</td>
+                </tr>
+
+                <tr>
+                  <td>offset</td>
+                  <td>integer</td>
+                  <td>5</td>
+                  <td>How far is the bubble positioned</td>
+                </tr>
+
+                <tr>
+                  <td>event</td>
+                  <td>string</td>
+                  <td>mouseover</td>
+                  <td>mouseover / focus</td>
+                </tr>
+
+                <tr>
+                  <td>target</td>
+                  <td>string</td>
+                  <td>N/A</td>
+                  <td>Content is set by copying the html from the target elem</td>
+                </tr>
+
+                <tr>
+                  <td>delayIn</td>
+                  <td>integer</td>
+                  <td>150</td>
+                  <td>Time before bubble is shown</td>
+                </tr>
+
+                <tr>
+                  <td>delayOut</td>
+                  <td>integer</td>
+                  <td>50</td>
+                  <td>Time before tooltip is hidden</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><span class="lbl lbl-notice">Note:</span> You can still fire up the bubble the regular old way by calling the <code>bubble()</code> function on the element/set of elements and passing the desired options.</p>
+
+            <h3>Basic</h3>
+            <p>In the following example the the bubble is triggered on a link therefore the content is set from the <code>title</code> attribute.</p>
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-bbl">Preview</a></li>
+                <li><a href="#markup-bbl">Markup</a></li>
+              </ul>
+
+              <div id="preview-bbl" class="tab--container">
+                <p>Nulla eros nunc, <a data-trigger="bubble" title="This is a default positioned bubble. Check the following examples for more advanced uses." href="#">venenatis ut rutrum nec</a>. </p>
+              </div>
+              <div id="markup-bbl" class="tab--container">
+<pre class="prettyprint">
+  &lt;p&gt;Nulla eros nunc, &lt;a data-trigger="bubble" title="This is a default positioned bubble. Check the following examples for more advanced uses." href="#"&gt;venenatis ut rutrum nec&lt;/a&gt;. &lt;/p&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+
+            <h3>Form</h3>
+            <p>You can use the bubble plugin inside the form module to provide the user with instructions.</p>
+
+            <h4>Usage</h4>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-bblform">Preview</a></li>
+                <li><a href="#markup-bblform">Markup</a></li>
+              </ul>
+
+              <div id="preview-bblform" class="tab--container">
+                <form class="frm frm-vertical">
+                  <div class="frm--field">
+                    <label for="bblform1">Label</label>
+                    <div class="frm--input">
+                      <input type="text" id="bblform1" class="l-grid6" name="bblform1" placeholder="Type Something" data-position="top" data-trigger="bubble" data-content="Vivamus id quam id nisi congue tempus. Fusce ut ligula quis leo fringilla mollis vel eu nibh." />
+                      <p class="frm--help frm--help-inline">Bubble is triggered upon mouseover</p>
+                    </div>
+                  </div>
+
+                  <div class="frm--field">
+                    <label for="bblform2">Label</label>
+                    <div class="frm--input">
+                      <input type="text" id="bblform2" class="l-grid6" name="bblform2" placeholder="Type Something" data-position="right" data-event="focus" data-trigger="bubble" />
+                      <p class="frm--help frm--help-inline">Bubble is triggered upon focus</p>
+                    </div>
+                    <div id="bblform2-bubble" class="is-hidden">
+                      Hey! <strong>I'm a bubble</strong> that gets it's content from a html element!
+                      <br />
+                      <br />
+                      <a href="#">Link</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div id="markup-bblform" class="tab--container">
+<pre class="prettyprint">
+  &lt;form class="frm frm-vertical"&gt;
+    &lt;div class="frm--field"&gt;
+      &lt;label for="bblform1"&gt;Label&lt;/label&gt;
+      &lt;div class="frm--input"&gt;
+        &lt;input type="text" id="bblform1" class="l-grid6" name="bblform1" placeholder="Type Something" data-position="top" data-trigger="bubble" data-content="Vivamus id quam id nisi congue tempus. Fusce ut ligula quis leo fringilla mollis vel eu nibh." /&gt;
+        &lt;p class="frm--help frm--help-inline"&gt;Bubble is triggered upon mouseover&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="frm--field"&gt;
+      &lt;label for="bblform2"&gt;Label&lt;/label&gt;
+      &lt;div class="frm--input"&gt;
+        &lt;input type="text" id="bblform2" class="l-grid6" name="bblform2" placeholder="Type Something" data-position="right" data-event="focus" data-trigger="bubble" /&gt;
+        &lt;p class="frm--help frm--help-inline"&gt;Bubble is triggered upon focus&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div id="bblform2-bubble" class="is-hidden"&gt;
+        Hey! &lt;strong&gt;I'm a bubble&lt;/strong&gt; that gets it's content from a html element!
+        &lt;br /&gt;
+        &lt;br /&gt;
+        &lt;a href="#"&gt;Link&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="modal"></a>
+            <h2>
+              Modal
+              <small class="l-right">Requires Javascript</small>
+            </h2>
+            <blockquote>
+              <p>In user interface design, a modal window is a child window which requires the user to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window</p>
+              <small><a href="http://en.wikipedia.org/wiki/Modal_window">Wikipedia</a></small>
+            </blockquote>
+            
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.mdl</code></li>
+            </ul>
+
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.mdl-rounded</code> must extend <code>.mdl</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <ol>
+              <li>Create the modal markup and assign it an unique ID</li>
+              <li>Apply <code>data-modal-trigger</code> to the element that will trigger the modal and pass it the modal ID</li>
+            </ol>
+            <p><span class="lbl lbl-alert">NOTE:</span> You can fire any modal by calling the <code>modal()</code> function on the module (<code>.mdl</code>)</p>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-mdl">Preview</a></li>
+                <li><a href="#markup-mdl">Markup</a></li>
+              </ul>
+
+              <div id="preview-mdl" class="tab--container">
+              </div>
+              <div id="markup-mdl" class="tab--container">
+<pre class="prettyprint">
+</pre>
+              </div>
+
+            </div><!-- .tab -->
+            <h4>States</h4>
+            <ol>
+              <li>Loading</li>
+            </ol>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-mdl">Preview</a></li>
+                <li><a href="#markup-mdl">Markup</a></li>
+              </ul>
+
+              <div id="preview-mdl" class="tab--container">
+                <a href="#" class="btn" data-modal-trigger="modal2">Fire Infinite Loading Modal</a>
+
+                <div class="mdl mdl--loading" id="modal2">
+                  <a class="mdl--close cls" href="#">&times;</a>
+                </div>
+
+              </div>
+              <div id="markup-mdl" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="mdl mdl--loading" id="modal2"&gt;
+  &lt;a class="mdl--close cls" href="#"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+          </div><!-- .section -->
+
+          <div class="section">
+            <a name="progress"></a>
+            <h2>
+              Progress Bar
+              <small class="l-right">Requires Javascript</small>
+            </h2>
+
+            <p>Indicate the level of a task completion by using the <strong>Progress Bar</strong> module.</p>
+
+            <h4>Class</h4>
+            <ul class="ul-square">
+              <li><code>.pbr</code></li>
+            </ul>
+
+            <h4>Extend</h4>
+            <ul class="ul-square">
+              <li><code>.pbr-striped</code> must extend <code>.pbr</code></li>
+            </ul>
+
+            <h4>Usage</h4>
+            <ol>
+              <li>Wrap <code>.pbr--percentage</code> into a container with a class of <code>.pbr</code></li>
+            </ol>
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-prb">Preview</a></li>
+                <li><a href="#markup-prb">Markup</a></li>
+              </ul>
+
+              <div id="preview-prb" class="tab--container">
+<div class="pbr">
+  <div class="pbr--percentage" style="width: 200px;">
+  </div><!-- .pbr-percentage -->
+</div><!-- .pbr -->
+              </div>
+              <div id="markup-prb" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="pbr"&gt;
+  &lt;div class="pbr--percentage" style="width: 200px;"&gt;
+  &lt;/div&gt;&lt;!-- .pbr-percentage --&gt;
+&lt;/div&gt;&lt;!-- .pbr --&gt;
+</pre>
+              </div>
+
+            </div><!-- .tab -->
+            <h4>States</h4>
+            <ol>
+              <li>Loading</li>
+            </ol>
+
+            <div class="tab" data-trigger="tab">
+              <ul class="tab--nav">
+                <li><a href="#preview-prb-state">Preview</a></li>
+                <li><a href="#markup-prb-state">Markup</a></li>
+              </ul>
+
+              <div id="preview-prb-state" class="tab--container">
+<div class="pbr pbr-striped is-animating">
+  <div class="pbr--percentage" style="width: 200px;">
+  </div><!-- .pbr-percentage -->
+</div><!-- .pbr -->
+              </div>
+              <div id="markup-prb-state" class="tab--container">
+<pre class="prettyprint">
+&lt;div class="pbr pbr-striped is-animating"&gt;
+  &lt;div class="pbr--percentage"&gt;
+  &lt;/div&gt;&lt;!-- .pbr-percentage --&gt;
+&lt;/div&gt;&lt;!-- .pbr --&gt;
+</pre>
+              </div>
+            </div><!-- .tab -->
+          </div><!-- .section -->
+        </div><!-- #main -->
+
+
+      </div><!-- .l-row -->
+    </div><!-- container -->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="javascripts/jquery-1.7.1.js"><\/script>')</script>
+
+    <script src="javascripts/flex.min.js" type="text/javascript"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script src="javascripts/prettify.js" type="text/javascript"></script>
+  </body>
+
+</html>
+
