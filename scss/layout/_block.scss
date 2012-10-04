@@ -1,12 +1,12 @@
 [class*="l-block"] {
   @include clearfix();
-  margin: 0 -($gridGutterWidth / 2);
+  margin: 0 -(relativeValue($gridGutterWidth / 2, $siteWidth));
 
   > li,
   > div {
     float: left;
-    padding: 0 $gridGutterWidth / 2;
-    margin-bottom: $gridGutterWidth;
+    padding: 0 relativeValue($gridGutterWidth / 2, $siteWidth);
+    margin-bottom: relativeValue($gridGutterWidth, $siteWidth);
   }
 }
 
