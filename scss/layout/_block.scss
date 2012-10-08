@@ -1,6 +1,6 @@
 [class*="l-block"] {
   @include clearfix();
-  margin: 0 -(relativeValue($gridGutterWidth / 2, $siteWidth));
+  margin: 0 (relativeValue(- $gridGutterWidth / 2, $siteWidth));
 
   > li,
   > div {
