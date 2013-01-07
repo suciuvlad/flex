@@ -31,8 +31,10 @@
 }
 
 .tbl {
-  tr:hover {
-    background-color: #ffffd6;
+  tbody {
+    tr:hover {
+      background-color: #ffffd6;
+    }
   }
 }
 
