@@ -2,17 +2,10 @@
  :: Responsive Grid
  * -------------------------------------------------- */
 
-@media only screen and (max-width: calc-em(767px, $baseFontSize)) {
-  .l-row {
-    width: 100%;
-    min-width: 0;
-
-    [class*="l-grid"] {
-      float: none;
-      width: auto;
-      margin-left: 0;
-      margin-right: 0;
-    }
+@each $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 1);
+  @include reponsiveBreakpoints($name) {
+    @include grid('-#{$name}');
   }
 }
 
