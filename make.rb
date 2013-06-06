@@ -1,6 +1,6 @@
 # Prepare Flex
 
-VERSION = '0.1.2'
+VERSION = '0.1.4'
 
 # Merge and minify javascript files
 `jammit`
