@@ -80,7 +80,7 @@
                 <div class="fb-like" data-href="http://www.flex.fyvesmedia.com" data-send="false" data-width="450" data-show-faces="false"></div>
               </p>
               <a class="btn" href="https://github.com/suciuvlad/flex">Github Page</a>
-              <a class="btn btn-submit" href="http://flex.fyvesmedia.com/flex-0.1.0.zip">Download</a>
+              <a class="btn btn-primary" href="http://flex.fyvesmedia.com/flex-0.1.0.zip">Download</a>
             </div>
 
             <div class="nav nav-fixed-top">
@@ -1686,8 +1686,8 @@
             <div class="l-row">
               <div class="l-grid6">
                 <ul class="ul-square">
-                  <li><code>.btn-submit</code> must extend <code>.btn</code></li>
-                  <li><code>.btn-cta</code> must extend <code>.btn</code></li>
+                  <li><code>.btn-primary</code> must extend <code>.btn</code></li>
+                  <li><code>.btn-secondary</code> must extend <code>.btn</code></li>
                 </ul>
               </div><!-- l-grid6 -->
 
@@ -1706,15 +1706,15 @@
 
               <div id="preview-buttons" class="tab--container">
                 <a class="btn" href="#">Default Button</a>
-                <a class="btn btn-submit" href="#">Submit Button</a>
-                <a class="btn btn-cta" href="#">CTA Button</a>
+                <a class="btn btn-primary" href="#">Submit Button</a>
+                <a class="btn btn-secondary" href="#">CTA Button</a>
                 <a class="btn btn-rounded" href="#">Rounded Button</a>
               </div>
               <div id="markup-buttons" class="tab--container">
 <pre class="prettyprint">
 &lt;a class="btn" href="#"&gt;Default Button&lt;/a&gt;
-&lt;a class="btn btn-submit" href="#"&gt;Submit Button&lt;/a&gt;
-&lt;a class="btn btn-cta" href="#"&gt;CTA Button&lt;/a&gt;
+&lt;a class="btn btn-primary" href="#"&gt;Submit Button&lt;/a&gt;
+&lt;a class="btn btn-secondary" href="#"&gt;CTA Button&lt;/a&gt;
 &lt;a class="btn btn-rounded" href="#"&gt;Default Button&lt;/a&gt;
 </pre>
               </div>
@@ -1733,15 +1733,15 @@
 
               <div id="preview-buttons" class="tab--container">
                 <a class="btn" disabled="disabled" href="#">Default Button</a>
-                <a class="btn btn-submit" disabled="disabled" href="#">Submit Button</a>
-                <a class="btn btn-cta is-btn-disabled" href="#">CTA Button</a>
+                <a class="btn btn-primary" disabled="disabled" href="#">Submit Button</a>
+                <a class="btn btn-secondary is-btn-disabled" href="#">CTA Button</a>
                 <a class="btn btn-rounded" disabled="disabled" href="#">Rounded Button</a>
               </div><!-- #preview-buttons -->
               <div id="markup-buttons" class="tab--container">
 <pre class="prettyprint">
 &lt;a class="btn" disabled="disabled" href="#"&gt;Default Button&lt;/a&gt;
-&lt;a class="btn btn-submit" disabled="disabled" href="#"&gt;Submit Button&lt;/a&gt;
-&lt;a class="btn btn-cta" is-btn-disabled href="#"&gt;CTA Button&lt;/a&gt;
+&lt;a class="btn btn-primary" disabled="disabled" href="#"&gt;Submit Button&lt;/a&gt;
+&lt;a class="btn btn-secondary" is-btn-disabled href="#"&gt;CTA Button&lt;/a&gt;
 &lt;a class="btn btn-rounded" disabled="disabled" href="#"&gt;Rounded Button&lt;/a&gt;
 </pre>
               </div><!-- #markup-buttons -->
@@ -1777,8 +1777,8 @@
                   </div>
 
                   <div class="tlb--group tlb--group-rounded">
-                    <a class="btn btn-submit" href="#">Item 1</a>
-                    <a class="btn btn-submit" href="#">Item 2</a>
+                    <a class="btn btn-primary" href="#">Item 1</a>
+                    <a class="btn btn-primary" href="#">Item 2</a>
                   </div>
                 </div>
               </div><!-- #preview-toolbar -->
@@ -1792,8 +1792,8 @@
   &lt;/div&gt;
 
   &lt;div class="tlb--group tlb--group-rounded"&gt;
-    &lt;a class="btn btn-submit" href="#"&gt;Item 1&lt;/a&gt;
-    &lt;a class="btn btn-submit" href="#"&gt;Item 2&lt;/a&gt;
+    &lt;a class="btn btn-primary" href="#"&gt;Item 1&lt;/a&gt;
+    &lt;a class="btn btn-primary" href="#"&gt;Item 2&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
@@ -2383,7 +2383,7 @@
                     <h6>Sed auctor auctor felis</h6>
                     <img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" />
                     <p>Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. </p>
-                    <a class="btn btn-cta" href="#">Proceed to Checkout</a>
+                    <a class="btn btn-secondary" href="#">Proceed to Checkout</a>
                   </div>
                 </div>
                 <br />
@@ -2407,7 +2407,7 @@
     &lt;h6&gt;Sed auctor auctor felis&lt;/h6&gt;
     &lt;img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" /&gt;
     &lt;p&gt;Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. &lt;/p&gt;
-    &lt;a class="btn btn-cta" href="#"&gt;Proceed to Checkout&lt;/a&gt;
+    &lt;a class="btn btn-secondary" href="#"&gt;Proceed to Checkout&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;br /&gt;
@@ -2447,7 +2447,7 @@
                 </div><!-- #preview-drdbtn -->
                 <br />
                 <div class="drd">
-                  <a class="btn btn-submit drd--toggle" data-trigger="dropdown" href="#">Dropdown button</a>
+                  <a class="btn btn-primary drd--toggle" data-trigger="dropdown" href="#">Dropdown button</a>
                   <ul class="drd--menu">
                     <li><a href="#">Menu Item 1</a></li>
                     <li><a href="#">Menu Item 2</a></li>
@@ -2471,7 +2471,7 @@
 &lt;/div&gt;
 &lt;br /&gt;
 &lt;div class="drd"&gt;
-  &lt;a class="btn btn-submit drd--toggle" data-trigger="dropdown" href="#"&gt;Dropdown button&lt;/a&gt;
+  &lt;a class="btn btn-primary drd--toggle" data-trigger="dropdown" href="#"&gt;Dropdown button&lt;/a&gt;
   &lt;ul class="drd--menu"&gt;
     &lt;li&gt;&lt;a href="#"&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
