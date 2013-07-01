@@ -30,6 +30,8 @@
   display: none;
 }
 
-@include reponsiveBreakpoints('small') {
-  @include navigation;
+@each $name in $navigation-breakpoints {
+  @include reponsiveBreakpoints($name) {
+    @include navigation;
+  }
 }
