@@ -83,6 +83,7 @@
     outline: 0;
 
     color: $bodyColor;
+    width: 100%;
   }
 
   input[type="image"],
@@ -310,37 +311,4 @@
       border-top-color: darken($borderColor, 10%);
     }
   }
-}
-
-/* Form: Media Queries */
-
-@media (max-width: 480px) {
-
-  .frm {
-    .frm--input {
-      input[type="text"],
-      input[type="email"],
-      input[type="number"],
-      input[type="password"],
-      textarea,
-      select {
-        width: 100%;
-      }
-    }
-  }
-
-  .frm {
-    .frm--input {
-      margin-left: 0;
-    }
-  }
-
-  .frm--field > label {
-      display: block;
-      width: auto;
-      float: none;
-      text-align: left;
-      padding-top: 0;
-      margin-bottom: 5px;
-    }
 }
