@@ -12,7 +12,9 @@
   }
 }
 
-@include blockGrid;
+@media only screen {
+  @include blockGrid('-small');
+}
 
 @each $breakpoint in $breakpoints {
   $name: nth($breakpoint, 1);

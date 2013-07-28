@@ -1,32 +1,40 @@
-var Message = {};
+/*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
+/*global jQuery, document, window */
 
-Message.init = function( options, elem ) {
-  var self    = this;
+(function ($) {
 
-  this.options = $.extend( {}, this.defaults, options, $(elem).data() );
-  this.element = elem;
+  'use strict';
+  var Message = {};
 
-  $(this.element).click(function(e){
-    e.preventDefault();
-    $(this).parent().remove();
-  })
+  Message.init = function (options, elem) {
+    var self    = this;
 
-  return this;
-}
+    this.options = $.extend({}, this.defaults, options, $(elem).data());
+    this.element = elem;
 
-
-$.plugin = function( name, object ) {
-  $.fn[ name ] = function( options ) {
-    return this.each(function() {
-      if ( ! $.data( this, name ) ) {
-        $.data( this, name, Object.create(object).init(options, this) );
-      }
+    $(this.element).click(function (e) {
+      e.preventDefault();
+      $(this).parent().remove();
     });
+
+    return this;
   };
-};
 
-$.plugin( 'message', Message );
 
-$(document).ready(function(){
-  $('.msg a.cls').message();
-})
+  $.plugin = function (name, object) {
+    $.fn[name] = function (options) {
+      return this.each(function () {
+        if (!$.data(this, name)) {
+          $.data(this, name, Object.create(object).init(options, this));
+        }
+      });
+    };
+  };
+
+  $.plugin('message', Message);
+
+  $(document).ready(function () {
+    $('.msg a.cls').message();
+  });
+
+}(jQuery, window, document));

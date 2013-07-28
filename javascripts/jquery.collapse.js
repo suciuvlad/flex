@@ -1,37 +1,44 @@
-var Collapse = {};
+/*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
+/*global jQuery, document, window */
 
-Collapse.init = function( options, elem ) {
-  var self    = this;
+(function ($) {
 
-  this.options = $.extend( {}, this.defaults, options, $(elem).data() );
+  'use strict';
+  var Collapse = {};
 
-  this.element  = elem;
-  this.target = this.options.target;
+  Collapse.init = function (options, elem) {
+    var self    = this;
 
-  this._onToggle();
+    this.options = $.extend({}, this.defaults, options, $(elem).data());
 
-  return this;
-}
+    this.element  = elem;
+    this.target = this.options.target;
 
-Collapse._onToggle = function () {
-  var self = this;
+    this._onToggle();
 
-  $(this.element).click(function (e) {
-    e.preventDefault();
+    return this;
+  };
 
-    $(self.target).toggleClass('is-expanded');
-  });
-}
+  Collapse._onToggle = function () {
+    var self = this;
 
-$.plugin = function( name, object ) {
-  $.fn[ name ] = function( options ) {
-    return this.each(function() {
-      if ( ! $.data( this, name ) ) {
-        $.data( this, name, Object.create(object).init(options, this) );
-      }
+    $(this.element).click(function (e) {
+      e.preventDefault();
+
+      $(self.target).toggleClass('is-expanded');
     });
   };
-};
 
-$.plugin( 'collapse', Collapse );
-$( '[data-trigger=collapse]' ).collapse();
+  $.plugin = function (name, object) {
+    $.fn[name] = function (options) {
+      return this.each(function () {
+        if (!$.data(this, name)) {
+          $.data(this, name, Object.create(object).init(options, this));
+        }
+      });
+    };
+  };
+
+  $.plugin('collapse', Collapse);
+  $('[data-trigger=collapse]').collapse();
+}(jQuery, window, document));
