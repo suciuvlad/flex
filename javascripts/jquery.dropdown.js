@@ -20,7 +20,8 @@ var Flex = Flex || {};
 
   Dropdown.init = function (options, elem) {
     var onEventIn,
-      onEventOut;
+      onEventOut,
+      self = this;
 
     this.options = $.extend({}, this.defaults, options, $(elem).data());
 
@@ -28,11 +29,12 @@ var Flex = Flex || {};
     this.parent   = $(elem).parent();
     this.menu     = $(elem).parent().find(".drd--menu");
 
-    this.parent.click(function (e) {
-      e.preventDefault();
-    });
 
-    $('html').click(function () {
+    $(document).on('click', function (e) {
+      if ($(e.target).is('.drd--menu') || $.contains(self.menu[0], e.target)) {
+        return;
+      }
+
       clear();
     });
 
@@ -46,13 +48,13 @@ var Flex = Flex || {};
       isActive;
 
     $(this.element).click(function (e) {
+      e.stopPropagation();
+      e.preventDefault();
       var isActive  = self.parent.hasClass('is-drd-open');
 
 
       clear();
       !isActive && self.parent.toggleClass('is-drd-open');
-
-      return false;
     });
   };
 
