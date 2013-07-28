@@ -1,6 +1,8 @@
 /*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
 /*global jQuery, document, window, Tooltip */
 
+var Flex = Flex || {};
+
 (function ($, Tooltip) {
 
   'use strict';
@@ -132,4 +134,5 @@
     $('[data-trigger=bubble]').bubble();
   }
 
-}(jQuery, window, document, Tooltip));
+  Flex.Bubble = Bubble;
+}(jQuery, window, document, Flex.Tooltip));

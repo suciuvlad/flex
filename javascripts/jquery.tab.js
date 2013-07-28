@@ -1,6 +1,8 @@
 /*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
 /*global jQuery, document, window */
 
+var Flex = Flex || {};
+
 (function ($) {
 
   'use strict';
@@ -69,4 +71,5 @@
   $.plugin('tab', Tab);
 
   $('[data-trigger=tab]').tab();
+  Flex.Tab = Tab;
 }(jQuery, window, document));

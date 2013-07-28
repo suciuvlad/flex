@@ -1,6 +1,8 @@
 /*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
 /*global jQuery, document, window */
 
+var Flex = Flex || {};
+
 (function ($) {
 
   'use strict';
@@ -41,4 +43,6 @@
 
   $.plugin('collapse', Collapse);
   $('[data-trigger=collapse]').collapse();
+
+  Flex.Collapse = Collapse;
 }(jQuery, window, document));

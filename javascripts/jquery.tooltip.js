@@ -1,6 +1,8 @@
 /*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
 /*global jQuery, document, window */
 
+var Flex = Flex || {};
+
 (function ($) {
 
   'use strict';
@@ -149,4 +151,6 @@
   } else {
     $('[data-trigger=tooltip]').tooltip();
   }
+
+  Flex.Tooltip = Tooltip;
 }(jQuery, window, document));

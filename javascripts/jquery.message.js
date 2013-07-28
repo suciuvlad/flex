@@ -1,6 +1,8 @@
 /*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
 /*global jQuery, document, window */
 
+var Flex = Flex || {};
+
 (function ($) {
 
   'use strict';
@@ -36,5 +38,7 @@
   $(document).ready(function () {
     $('.msg a.cls').message();
   });
+
+  Flex.Message = Message;
 
 }(jQuery, window, document));

@@ -1,6 +1,8 @@
 /*jslint nomen: true, unparam: true, regexp: true, indent: 2 */
 /*global jQuery, document, window */
 
+var Flex = Flex || {};
+
 (function ($) {
 
   'use strict';
@@ -98,4 +100,6 @@
       $('#' + modal).trigger('modal:open');
     });
   });
+
+  Flex.modal = Modal;
 }(jQuery, window, document));
