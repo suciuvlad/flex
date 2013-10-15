@@ -135,4 +135,4 @@ var Flex = Flex || {};
   }
 
   Flex.Bubble = Bubble;
-}(jQuery, window, document, Flex.Tooltip));
+}(jQuery, Flex.Tooltip));
