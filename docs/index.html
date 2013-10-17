@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- css -->
-    <link href="stylesheets/flex.min.css" rel="stylesheet">
+    <link href="../stylesheets/flex.css" rel="stylesheet">
     <link href="stylesheets/style.css" rel="stylesheet">
     <link href="stylesheets/prettify.css" type="text/css" rel="stylesheet" />
 
@@ -39,7 +39,15 @@
     <div class="l-container">
 
       <div class="l-row">
-        <div class="dbr l-grid3">
+        <div class="dbr l-grid-small3">
+
+
+
+
+
+
+
+
           <ul>
             <li class="dbr-title"><h6>Flex</h6></li>
             <li><a href="#flex">About</a></li>
@@ -69,7 +77,7 @@
           </ul>
         </div><!-- #sidebar -->
 
-        <div id="main" class="l-grid13">
+        <div id="main" class="l-grid-small13">
           <a name="flex"></a>
           <div class="section">
             <div class="hro">
@@ -116,6 +124,24 @@
               </div>
             </div><!-- .nav -->
             <a name="browser-support"></a>
+
+<div data-trigger="tab">
+  <ul class="js-tab--nav">
+    <li><a class="js-tab--nav--btn" href="#item4">Tab Item 1</a></li>
+    <li><a class="js-tab--nav--btn" href="#item5">Tab Item 2</a></li>
+  </ul>
+
+  <div id="item4" class="js-tab--container">
+    <h6>Ut aliquet tincidunt pellentesque</h6>
+    <p>Maecenas ipsum nisi, laoreet ut placerat suscipit, euismod et leo. Aenean accumsan augue mauris, nec iaculis magna.</p>
+  </div>
+
+  <div id="item5" class="js-tab--container">
+    <h6>Suspendisse magna ante</h6>
+    <p>Suspendisse nisl urna, porttitor sed fringilla et, rutrum eget nibh. Nullam feugiat, mi nec elementum malesuada, neque ante volutpat mi, non sodales urna urna eget diam.</p>
+  </div>
+</div>
+
             <h3>Browser Support</h3>
             <p>
               <img src="images/browser_logos-32.png" alt="Google Chrome, Firefox, Opera, Safari, Internet Explorer" />
@@ -160,52 +186,52 @@
             <p>Everything you need to do in order to use the grid is to wrap the columns in <code>.l-row</code> parent containers. Basically the rows keep the columns constrained at specific dimensions that change based on the user's screen size.</p>
 
             <div class="tab" data-trigger="tab">
-              <ul class="tab--nav">
+              <ul class="js-tab--nav tab--nav">
                 <li><a href="#preview-grid">Preview</a></li>
                 <li><a href="#markup-grid">Markup</a></li>
               </ul>
 
-              <div id="preview-grid" class="tab--container">
+              <div id="preview-grid" class="js-tab--container tab--container">
                 <div class="l-row">
-                  <div class="l-grid8 l-grid-small16">
+                  <div class="l-grid-large8 l-grid-small16">
                     <div class="l-row">
-                      <div class="l-grid16 l-grid-large16">
+                      <div class="l-grid-small16 l-grid-large16">
                         <p style="background-color: red; color: #fff; padding: 10px;">1.1</p>
                       </div>
 
-                      <div class="l-grid4 l-grid-large16">
+                      <div class="l-grid-small4 l-grid-large16">
                         <p style="background-color: red; color: #fff; padding: 10px;">1.2</p>
                       </div>
 
-                      <div class="l-grid12 l-grid-large16">
+                      <div class="l-grid-small12 l-grid-large16">
                         <p style="background-color: red; color: #fff; padding: 10px;">1.3</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="l-grid8 l-grid-small16">
+                  <div class="l-grid-lrage8 l-grid-small16">
                     <div class="l-row">
-                      <div class="l-grid8">
+                      <div class="l-grid-small8">
                         <p style="background-color: red; color: #fff; padding: 10px;">2.1</p>
                       </div>
 
-                      <div class="l-grid8">
+                      <div class="l-grid-small8">
                         <p style="background-color: red; color: #fff; padding: 10px;">2.2</p>
                       </div>
 
-                      <div class="l-grid4 l-grid-large8">
+                      <div class="l-grid-small4 l-grid-large8">
                         <p style="background-color: red; color: #fff; padding: 10px;">2.3</p>
                       </div>
 
-                      <div class="l-grid4 l-grid-large8">
+                      <div class="l-grid-small4 l-grid-large8">
                         <p style="background-color: red; color: #fff; padding: 10px;">2.4</p>
                       </div>
 
-                      <div class="l-grid4 l-grid-large8">
+                      <div class="l-grid-small4 l-grid-large8">
                         <p style="background-color: red; color: #fff; padding: 10px;">2.5</p>
                       </div>
 
-                      <div class="l-grid4 l-grid-large8">
+                      <div class="l-grid-small4 l-grid-large8">
                         <p style="background-color: red; color: #fff; padding: 10px;">2.6</p>
                       </div>
                     </div>
@@ -1675,6 +1701,7 @@
           <div class="section">
             <a name="button"></a>
             <h2>Buttons</h2>
+
             <p>The button module comes out of the box with three diferent colors.</p>
             <h4>Class</h4>
             <ul class="ul-square">
@@ -1707,6 +1734,7 @@
                 <a class="btn btn-primary" href="#">Submit Button</a>
                 <a class="btn btn-secondary" href="#">CTA Button</a>
                 <a class="btn btn-rounded" href="#">Rounded Button</a>
+                <input class="js-delete btn btn-rounded" name="commit" type="submit" value="Delete">
               </div>
               <div id="markup-buttons" class="tab--container">
 <pre class="prettyprint">
@@ -2381,7 +2409,7 @@
                     <h6>Sed auctor auctor felis</h6>
                     <img class="l-right" src="http://flickholdr.com/70/70/shirt" alt="Placeholder image from flickholdr.com" />
                     <p>Vivamus scelerisque, urna id fermentum lacinia, nisl eros dignissim mi, ac tempor tortor turpis sit amet turpis. </p>
-                    <a class="btn btn-secondary" href="#">Proceed to Checkout</a>
+                    <a class="btn btn-secondary" href="http://www.google.com">Proceed to Checkout</a>
                   </div>
                 </div>
                 <br />

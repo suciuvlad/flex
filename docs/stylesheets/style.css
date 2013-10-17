@@ -149,3 +149,7 @@ h2 small {
   background-color: #dff0d8;
   border: 1px solid #d6e9c6;
 }
+
+.tab--container {
+  display: block !important;
+}
