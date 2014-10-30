@@ -1,169 +1,290 @@
-@mixin base($size) {
+$arrow-multiplier: 1.41421356; // cos(PI/4)
+
+@function compute-border-width($size, $borderWidth) {
+  @return $size + round($borderWidth * $arrow-multiplier);
+}
+
+@mixin base($size, $borderWidth) {
   position: relative;
 
+  &:after,
   &:before {
+    width: 0;
+    height: 0;
     content: "";
     position: absolute;
     border-collapse: separate;
     border: $size solid transparent;
   }
+
+  &:before {
+    border-width: $borderWidth;
+  }
 }
 
-/* Gravity: North */
+/**
+ * Gravity: North
+*/
 
-@mixin gravity-n($size, $color) {
+@mixin gravity-n($size, $bgColor, $borderColor, $borderWidth) {
+  &:after,
   &:before {
     bottom: 100%;
-    margin-top: -$size;
-    border-bottom-color: $color;
   }
-}
 
-@mixin arrow-topLeft($size, $color) {
-  @include base($size);
-  @include gravity-n($size, $color);
+  &:after {
+    border-bottom-color: $bgColor;
+  }
 
   &:before {
+    border-bottom-color: $borderColor;
+  }
+};
+
+@mixin arrow-topLeft($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-n($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
     left: $size;
   }
-};
-
-
-@mixin arrow-topCenter($size, $color) {
-  @include base($size);
-  @include gravity-n($size, $color);
 
   &:before {
-    margin-left: -$size;
-    left: 50%;
+    left:  $size - round($borderWidth * $arrow-multiplier);
   }
 };
 
-@mixin arrow-topRight($size, $color) {
-  @include base($size);
-  @include gravity-n($size, $color);
+@mixin arrow-topCenter($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-n($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    left: 50%;
+    margin-left: -$size;
+  }
 
   &:before {
+    left: 50%;
+    margin-left: -$computedBorderWidth;
+  }
+};
+
+@mixin arrow-topRight($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-n($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
     right: $size;
   }
+
+  &:before {
+    right:  $size - round($borderWidth * $arrow-multiplier);
+  }
 };
 
 
-/* Gravity: East */
+/**
+ * Gravity: East
+*/
 
-@mixin gravity-e($size, $color) {
+@mixin gravity-e($size, $bgColor, $borderColor, $borderWidth) {
+  &:after,
   &:before {
     left: 100%;
-    margin-right: -$size;
-    border-left-color: $color;
   }
-}
 
-@mixin arrow-rightTop($size, $color) {
-  @include base($size);
-  @include gravity-e($size, $color);
+  &:after {
+    border-left-color: $bgColor;
+  }
 
   &:before {
-    top: $size;
+    border-left-color: $borderColor;
   }
 };
 
+@mixin arrow-rightTop($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
 
-@mixin arrow-rightCenter($size, $color) {
-  @include base($size);
-  @include gravity-e($size, $color);
+  @include base($size, $computedBorderWidth);
+  @include gravity-e($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    top: $size;
+  }
 
   &:before {
+    top:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+@mixin arrow-rightCenter($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-e($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
     top: 50%;
     margin-top: -$size;
   }
-};
-
-@mixin arrow-rightBottom($size, $color) {
-  @include base($size);
-  @include gravity-e($size, $color);
 
   &:before {
+    top: 50%;
+    margin-top: -$computedBorderWidth;
+  }
+};
+
+@mixin arrow-rightBottom($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-e($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
     bottom: $size;
+  }
+
+  &:before {
+    bottom:  $size - round($borderWidth * $arrow-multiplier);
   }
 };
 
 
-/* Gravity: South */
+/**
+ * Gravity: South
+*/
 
-@mixin gravity-s($size, $color) {
+@mixin gravity-s($size, $bgColor, $borderColor, $borderWidth) {
+  &:after,
   &:before {
     top: 100%;
-    margin-bottom: -$size;
-    border-top-color: $color;
   }
-}
 
-@mixin arrow-bottomLeft($size, $color) {
-  @include base($size);
-  @include gravity-s($size, $color);
+  &:after {
+    border-top-color: $bgColor;
+  }
 
   &:before {
+    border-top-color: $borderColor;
+  }
+};
+
+@mixin arrow-bottomLeft($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-s($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
     left: $size;
   }
-};
-
-
-@mixin arrow-bottomCenter($size, $color) {
-  @include base($size);
-  @include gravity-s($size, $color);
 
   &:before {
-    margin-left: -$size;
-    left: 50%;
+    left:  $size - round($borderWidth * $arrow-multiplier);
   }
 };
 
-@mixin arrow-bottomRight($size, $color) {
-  @include base($size);
-  @include gravity-s($size, $color);
+@mixin arrow-bottomCenter($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-s($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    left: 50%;
+    margin-left: -$size;
+  }
 
   &:before {
+    left: 50%;
+    margin-left: -$computedBorderWidth;
+  }
+};
+
+@mixin arrow-bottomRight($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-s($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
     right: $size;
   }
+
+  &:before {
+    right:  $size - round($borderWidth * $arrow-multiplier);
+  }
 };
 
 
-/* Gravity: West */
+/**
+ * Gravity: West
+*/
 
-@mixin gravity-w($size, $color) {
+@mixin gravity-w($size, $bgColor, $borderColor, $borderWidth) {
+  &:after,
   &:before {
     right: 100%;
-    margin-left: -$size;
-    border-right-color: $color;
   }
-}
 
-@mixin arrow-leftTop($size, $color) {
-  @include base($size);
-  @include gravity-w($size, $color);
+  &:after {
+    border-right-color: $bgColor;
+  }
 
   &:before {
-    top: $size;
+    border-right-color: $borderColor;
   }
 };
 
+@mixin arrow-leftTop($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
 
-@mixin arrow-leftCenter($size, $color) {
-  @include base($size);
-  @include gravity-w($size, $color);
+  @include base($size, $computedBorderWidth);
+  @include gravity-w($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
+    top: $size;
+  }
 
   &:before {
+    top:  $size - round($borderWidth * $arrow-multiplier);
+  }
+};
+
+@mixin arrow-rightCenter($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-w($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
     top: 50%;
     margin-top: -$size;
   }
-};
-
-@mixin arrow-leftBottom($size, $color) {
-  @include base($size);
-  @include gravity-w($size, $color);
 
   &:before {
+    top: 50%;
+    margin-top: -$computedBorderWidth;
+  }
+};
+
+@mixin arrow-rightBottom($size, $bgColor, $borderColor, $borderWidth) {
+  $computedBorderWidth: compute-border-width($size, $borderWidth);
+
+  @include base($size, $computedBorderWidth);
+  @include gravity-w($size, $bgColor, $borderColor, $computedBorderWidth);
+
+  &:after {
     bottom: $size;
+  }
+
+  &:before {
+    bottom:  $size - round($borderWidth * $arrow-multiplier);
   }
 };
