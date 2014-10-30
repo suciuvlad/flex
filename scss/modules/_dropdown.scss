@@ -67,3 +67,17 @@
     @include border-radius($radius);
   }
 }
+
+.drd.has-arrowLeft {
+  .drd--menu {
+    @include arrow-topLeft(12px, #fff, rgba(0, 0, 0, .15), 1px);
+    margin-top: 12px;
+  }
+}
+
+.drd.has-arrowRight {
+  .drd--menu {
+    @include arrow-topRight(12px, #fff, rgba(0, 0, 0, .15), 1px);
+    margin-top: 12px;
+  }
+}
