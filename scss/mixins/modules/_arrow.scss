@@ -1,0 +1,169 @@
+@mixin base($size) {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    border-collapse: separate;
+    border: $size solid transparent;
+  }
+}
+
+/* Gravity: North */
+
+@mixin gravity-n($size, $color) {
+  &:before {
+    bottom: 100%;
+    margin-top: -$size;
+    border-bottom-color: $color;
+  }
+}
+
+@mixin arrow-topLeft($size, $color) {
+  @include base($size);
+  @include gravity-n($size, $color);
+
+  &:before {
+    left: $size;
+  }
+};
+
+
+@mixin arrow-topCenter($size, $color) {
+  @include base($size);
+  @include gravity-n($size, $color);
+
+  &:before {
+    margin-left: -$size;
+    left: 50%;
+  }
+};
+
+@mixin arrow-topRight($size, $color) {
+  @include base($size);
+  @include gravity-n($size, $color);
+
+  &:before {
+    right: $size;
+  }
+};
+
+
+/* Gravity: East */
+
+@mixin gravity-e($size, $color) {
+  &:before {
+    left: 100%;
+    margin-right: -$size;
+    border-left-color: $color;
+  }
+}
+
+@mixin arrow-rightTop($size, $color) {
+  @include base($size);
+  @include gravity-e($size, $color);
+
+  &:before {
+    top: $size;
+  }
+};
+
+
+@mixin arrow-rightCenter($size, $color) {
+  @include base($size);
+  @include gravity-e($size, $color);
+
+  &:before {
+    top: 50%;
+    margin-top: -$size;
+  }
+};
+
+@mixin arrow-rightBottom($size, $color) {
+  @include base($size);
+  @include gravity-e($size, $color);
+
+  &:before {
+    bottom: $size;
+  }
+};
+
+
+/* Gravity: South */
+
+@mixin gravity-s($size, $color) {
+  &:before {
+    top: 100%;
+    margin-bottom: -$size;
+    border-top-color: $color;
+  }
+}
+
+@mixin arrow-bottomLeft($size, $color) {
+  @include base($size);
+  @include gravity-s($size, $color);
+
+  &:before {
+    left: $size;
+  }
+};
+
+
+@mixin arrow-bottomCenter($size, $color) {
+  @include base($size);
+  @include gravity-s($size, $color);
+
+  &:before {
+    margin-left: -$size;
+    left: 50%;
+  }
+};
+
+@mixin arrow-bottomRight($size, $color) {
+  @include base($size);
+  @include gravity-s($size, $color);
+
+  &:before {
+    right: $size;
+  }
+};
+
+
+/* Gravity: West */
+
+@mixin gravity-w($size, $color) {
+  &:before {
+    right: 100%;
+    margin-left: -$size;
+    border-right-color: $color;
+  }
+}
+
+@mixin arrow-leftTop($size, $color) {
+  @include base($size);
+  @include gravity-w($size, $color);
+
+  &:before {
+    top: $size;
+  }
+};
+
+
+@mixin arrow-leftCenter($size, $color) {
+  @include base($size);
+  @include gravity-w($size, $color);
+
+  &:before {
+    top: 50%;
+    margin-top: -$size;
+  }
+};
+
+@mixin arrow-leftBottom($size, $color) {
+  @include base($size);
+  @include gravity-w($size, $color);
+
+  &:before {
+    bottom: $size;
+  }
+};
