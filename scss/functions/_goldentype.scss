@@ -9,7 +9,7 @@
 // $l: line height
 // $w: line width
 // $u: default unit
-$phi: golden_ratio();
+$phi: $golden;
 $u: 1px;
 
 // determine unit to divide by to simplify square units (px*px)
