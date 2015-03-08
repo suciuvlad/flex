@@ -7,7 +7,7 @@ $importantNumber:   1218px !default;
 $baseLineHeight:    golden_ratio() !default;
 $defaultLineWidth:  550px !default;
 
-$base-size:         $baseFontSize $importantNumber;
+$ms-base: $baseFontSize $importantNumber;
 
 $headerFontColor:   #222 !default;
 
@@ -37,5 +37,3 @@ $breakpoints:
 
 $navigation-breakpoints: ('small') !default;
 $form-breakpoints: ('small') !default;
-
-$ms-base: 16px !default;
