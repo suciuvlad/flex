@@ -33,7 +33,7 @@ $largeMaxWidth:      calc-em(1024px, 16px) !default;
 
 $breakpoints:
   ( "small" "(max-width: #{$smallWidth})",
-    "large" "(min-width: #{$largeMinWidth}) and (max-width: #{$largeMaxWidth})" );
+    "large" "(min-width: #{$largeMinWidth}) and (max-width: #{$largeMaxWidth})" ) !default;
 
 $navigation-breakpoints: ('small') !default;
 $form-breakpoints: ('small') !default;
