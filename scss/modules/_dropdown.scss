@@ -1,5 +1,5 @@
 /* -------------------------------------------------- 
- :: DROPDOWN
+ :: Dropdown
  * -------------------------------------------------- */
 
 .drd {
@@ -17,12 +17,12 @@
 
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 4px solid $linkColor;
+    border-top: 4px solid $linkcolor;
 
     text-indent: -99999px;
     vertical-align: middle;
     content: "\2193";
-    color: $linkColor;
+    color: $linkcolor;
 
     @include opacity(50);
   }
@@ -69,16 +69,16 @@
   }
 }
 
-.drd.has-arrowLeft {
+.drd.has-arrowleft {
   .drd--menu {
-    @include arrow-topLeft(12px, #fff, rgba(0, 0, 0, .15), 1px);
+    @include arrow-topleft(12px, #fff, rgba(0, 0, 0, .15), 1px);
     margin-top: 12px;
   }
 }
 
-.drd.has-arrowRight {
+.drd.has-arrowright {
   .drd--menu {
-    @include arrow-topRight(12px, #fff, rgba(0, 0, 0, .15), 1px);
+    @include arrow-topright(12px, #fff, rgba(0, 0, 0, .15), 1px);
     margin-top: 12px;
   }
 }
