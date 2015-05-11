@@ -17,12 +17,12 @@
 
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 4px solid $linkcolor;
+    border-top: 4px solid $linkColor;
 
     text-indent: -99999px;
     vertical-align: middle;
     content: "\2193";
-    color: $linkcolor;
+    color: $linkColor;
 
     @include opacity(50);
   }
@@ -71,14 +71,14 @@
 
 .drd.has-arrowleft {
   .drd--menu {
-    @include arrow-topleft(12px, #fff, rgba(0, 0, 0, .15), 1px);
+    @include arrow-topLeft(12px, #fff, rgba(0, 0, 0, .15), 1px);
     margin-top: 12px;
   }
 }
 
 .drd.has-arrowright {
   .drd--menu {
-    @include arrow-topright(12px, #fff, rgba(0, 0, 0, .15), 1px);
+    @include arrow-topRight(12px, #fff, rgba(0, 0, 0, .15), 1px);
     margin-top: 12px;
   }
 }
